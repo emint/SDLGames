@@ -4,4 +4,4 @@
 
 USER_OBJS :=
 
-LIBS := -lSDL
+LIBS := -lSDL -lSDL_image
