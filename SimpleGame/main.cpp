@@ -48,6 +48,10 @@ bool move_state[4];
 int char_x = 10;
 int char_y = 10;
 
+/**
+ * From:
+ * http://www.libsdl.org/intro.en/usingvideo.html
+ */
 void
 draw_pixel(SDL_Surface *screen, int x, int y, Uint8 R, Uint8 G, Uint8 B) {
   Uint32 color = SDL_MapRGB(screen->format, R, G, B);
