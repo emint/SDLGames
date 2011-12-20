@@ -1,0 +1,2 @@
+MovementControls.o: Controls/MovementControls.cpp \
+ Controls/MovementControls.h
