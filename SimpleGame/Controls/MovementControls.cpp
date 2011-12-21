@@ -7,11 +7,29 @@
 
 #include "MovementControls.h"
 
-MovementControls::MovementControls() {
-	// TODO Auto-generated constructor stub
+MovementControls::~MovementControls(){
 
 }
 
-MovementControls::~MovementControls() {
-	// TODO Auto-generated destructor stub
+void MovementControls::movementIs(MovementType movementType){
+  switch (movementType){
+    case UP:
+      yVel += yVelInc;
+      break;
+    case DOWN:
+      yVel -= yVelInc;
+      break;
+    case RIGHT:
+      xVel += xVelInc;
+      break;
+    case LEFT:
+      xVel -= xVelInc;
+      break;
+    case UP_DOWN_STOP:
+      yVel = 0;
+      break;
+    case LEFT_RIGHT_STOP:
+      xVel = 0;
+      break;
+  }
 }

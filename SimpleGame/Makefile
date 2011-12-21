@@ -1,7 +1,16 @@
+#Home directory
+HOME = /home/emint
+
+
+#Path to avoid the "../" in includes
+SRC_PATH = .
+
 #Compiler, flags, and system libraries
-CC = g++
-CCFlags = -Wall -g -Werror
+CXXFLAGS = -Wall -g -Werror -I$(HOME)/gtest-1.6.0/include -I$(HOME)/gmock-1.6.0/include -I$(SRC_PATH)
 LIBS = -lSDL -lSDL_image
+
+#Testing library, assuming gtest in homefolder
+TESTLIBS = $(HOME)/gmock-1.6.0/make/gmock_main.a
 
 #Sources and headers
 HEADERS = Controls/MovementControls.h
@@ -11,7 +20,7 @@ SOURCES = Controls/MovementControls.cpp
 MAIN_SOURCES = main.cpp
 
 #For testing source files
-TEST_SOURCES = 
+TEST_SOURCES = unit-test/MovementControlTests.cpp unit-test/Mock_MovementControl.cpp
 
 #Objects
 OBJECTS = $(SOURCES:.cpp=.o)
@@ -23,15 +32,19 @@ TEST_OBJS = $(TEST_SOURCES:.cpp=.o)
 DEPENDENCY_FILE = Makefile.dependencies
 
 #Target names
-TARGETS = driver
-all: driver dependencies
+TARGETS = driver unit_tests
 
-driver: $(MAIN_OBJS) $(OBJECTS)
-	$(CXX) $(CCFlags) $(LIBS) -o $@ $(MAIN_OBJS) $(OBJECTS)
-	
+all: $(TARGETS) dependencies
+
+driver: $(MAIN_OBJS) $(OBJECTS) $(HEADERS) $(SOURCES)
+	$(CXX) $(CXXFLAGS) $(LIBS) -o $@ $(MAIN_OBJS) $(OBJECTS)
+
+unit_tests: $(TEST_OBJS) $(OBJECTS) $(SOURCES) $(HEADERS) $(TEST_SOURCES) 
+	$(CXX) $(CXXFLAGS)  $(LIBS) $(TESTLIBS) -o $@ $(OBJECTS) $(TEST_OBJS)
+
 ##Generate dependencies using -MM gcc flag
 dependencies: $(SOURCES) $(HEADERS) $(TEST_SOURCES)
-	$(CXX) $(CCFLAGS) -MM $(SOURCES) $(TEST_SOURCES) > $(DEPENDENCY_FILE)
+	$(CXX) $(CXXFLAGS) -MM $(SOURCES) $(TEST_SOURCES) > $(DEPENDENCY_FILE)
 
 -include Makefile.dependencies
 
