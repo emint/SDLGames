@@ -13,14 +13,14 @@ LIBS = -lSDL -lSDL_image
 TESTLIBS = $(HOME)/gmock-1.6.0/make/gmock_main.a
 
 #Sources and headers
-HEADERS = Controls/MovementControls.h
-SOURCES = Controls/MovementControls.cpp
-
+HEADERS = Controls/MovementControls.h Interactions/KeyboardController.h
+SOURCES = Controls/MovementControls.cpp Interactions/KeyboardController.cpp
 #Sources that can be run
 MAIN_SOURCES = main.cpp
 
 #For testing source files
-TEST_SOURCES = unit-test/MovementControlTests.cpp unit-test/Mock_MovementControl.cpp
+TEST_SOURCES = unit-test/MovementControlTests.cpp unit-test/Mock_MovementControl.h
+TEST_SOURCES += unit-test/KeyboardControllerTest.cpp
 
 #Objects
 OBJECTS = $(SOURCES:.cpp=.o)
@@ -36,10 +36,10 @@ TARGETS = driver unit_tests
 
 all: $(TARGETS) dependencies
 
-driver: $(MAIN_OBJS) $(OBJECTS) $(HEADERS) $(SOURCES)
+driver: $(MAIN_OBJS) $(OBJECTS) $(SOURCES)
 	$(CXX) $(CXXFLAGS) $(LIBS) -o $@ $(MAIN_OBJS) $(OBJECTS)
 
-unit_tests: $(TEST_OBJS) $(OBJECTS) $(SOURCES) $(HEADERS) $(TEST_SOURCES) 
+unit_tests: $(TEST_OBJS) $(OBJECTS) $(TEST_SOURCES) 
 	$(CXX) $(CXXFLAGS)  $(LIBS) $(TESTLIBS) -o $@ $(OBJECTS) $(TEST_OBJS)
 
 ##Generate dependencies using -MM gcc flag
