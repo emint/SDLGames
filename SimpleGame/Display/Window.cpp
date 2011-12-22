@@ -22,20 +22,16 @@ Window::~Window() {
 }
 
 void Window::showSprite(int x, int y, Sprite sprite){
-  SDL_Rect position;
+  Rect position;
 
-  position.x = x;
-  position.y = y;
+  position.xIs(x);
+  position.yIs(y);
 
   surfaceUtils->spriteBlit(position, sprite, windowSurface);
 }
 
 void Window::clearRect(int x, int y, size_t width, size_t height){
-  SDL_Rect toClear;
-  toClear.x = x;
-  toClear.y = y;
-  toClear.w = width;
-  toClear.h = height;
+  Rect toClear(x, y, width, height);
 
   surfaceUtils->clearRect(toClear, windowSurface);
 }

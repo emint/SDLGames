@@ -8,6 +8,8 @@
 #ifndef SURFACEUTILS_H_
 #define SURFACEUTILS_H_
 #include "SDL/SDL.h"
+
+#include "Display/Rect.h"
 #include "Display/Sprite.h"
 
 class SurfaceUtils {
@@ -15,9 +17,9 @@ class SurfaceUtils {
     SurfaceUtils();
     virtual ~SurfaceUtils();
 
-    virtual void spriteBlit(SDL_Rect position, Sprite src, SDL_Surface* target);
+    virtual void spriteBlit(Rect position, Sprite src, SDL_Surface* target);
 
-    virtual void clearRect(SDL_Rect toClear, SDL_Surface* target);
+    virtual void clearRect(Rect toClear, SDL_Surface* target);
 };
 
 #endif /* SURFACEUTILS_H_ */

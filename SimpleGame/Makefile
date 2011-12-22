@@ -15,11 +15,11 @@ TESTLIBS = $(HOME)/gmock-1.6.0/make/gmock_main.a
 #Sources and headers
 HEADERS = Controls/MovementControls.h Interactions/KeyboardController.h Display/Sprite.h
 HEADERS += Exceptions/ResourceNotFoundException.h Display/SurfaceLoader.h Display/Window.h
-HEADERS += Display/SurfaceUtils.h Exceptions/InvalidArgumentException.h
+HEADERS += Display/SurfaceUtils.h Exceptions/InvalidArgumentException.h Display/Rect.h
 
 SOURCES = Controls/MovementControls.cpp Interactions/KeyboardController.cpp Display/Sprite.cpp
 SOURCES += Exceptions/ResourceNotFoundException.cpp Display/SurfaceLoader.cpp Display/Window.cpp
-SOURCES += Display/SurfaceUtils.cpp Exceptions/InvalidArgumentException.cpp
+SOURCES += Display/SurfaceUtils.cpp Exceptions/InvalidArgumentException.cpp Display/Rect.cpp
 
 #Sources that can be run
 MAIN_SOURCES = main.cpp
