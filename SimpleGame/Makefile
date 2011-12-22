@@ -25,11 +25,12 @@ SOURCES += Display/SurfaceUtils.cpp Exceptions/InvalidArgumentException.cpp Disp
 MAIN_SOURCES = main.cpp
 
 #For testing source files
-TEST_SOURCES = unit-test/MovementControlTests.cpp unit-test/Mock_MovementControl.h
+TEST_SOURCES = unit-test/MovementControlTests.cpp 
 TEST_SOURCES += unit-test/KeyboardControllerTest.cpp unit-test/SpriteTest.cpp
-TEST_SOURCES += unit-test/Mock_SurfaceLoader.h unit-test/WindowTest.cpp
-TEST_SOURCES += unit-test/Mock_SurfaceUtils.h 
+TEST_SOURCES +=  unit-test/WindowTest.cpp
 
+TEST_HEADERS = unit-test/Mock_MovementControl.h unit-test/Mock_SurfaceLoader.h 
+TEST_HEADERS += unit-test/Mock_SurfaceUtils.h 
 #Objects
 OBJECTS = $(SOURCES:.cpp=.o)
 #Objects that can be run
@@ -47,11 +48,11 @@ all: $(TARGETS) dependencies
 driver: $(MAIN_OBJS) $(OBJECTS) 
 	$(CXX) $(CXXFLAGS) $(LIBS) -o $@ $(MAIN_OBJS) $(OBJECTS)
 
-unit_tests: $(TEST_OBJS) $(OBJECTS) $(HEADERS) $(SOURCES) $(TEST_SOURCES) 
+unit_tests: $(TEST_OBJS) $(OBJECTS) $(HEADERS) $(SOURCES) $(TEST_HEADERS) $(TEST_SOURCES) 
 	$(CXX) $(CXXFLAGS)  $(LIBS) $(TESTLIBS) -o $@ $(OBJECTS) $(TEST_OBJS)
 
 ##Generate dependencies using -MM gcc flag
-dependencies: $(SOURCES) $(HEADERS) $(TEST_SOURCES)
+dependencies: $(SOURCES) $(HEADERS) $(TEST_SOURCES) $(TEST_HEADERS)
 	$(CXX) $(CXXFLAGS) -MM $(SOURCES) $(TEST_SOURCES) > $(DEPENDENCY_FILE)
 
 -include Makefile.dependencies
