@@ -15,15 +15,8 @@ SurfaceLoader::~SurfaceLoader() {
 }
 
 SDL_Surface* SurfaceLoader::loadImage(string imageName){
-  SDL_Surface* character_surf = NULL;
-  character_surf = IMG_Load(imageName.c_str());
+  SDL_Surface* image = IMG_Load(imageName.c_str());
 
-  if (character_surf == NULL){
-    return NULL;
-  }
-
-  SDL_Surface* image = SDL_DisplayFormat(character_surf);
-  SDL_FreeSurface(character_surf);
   return image;
 }
 

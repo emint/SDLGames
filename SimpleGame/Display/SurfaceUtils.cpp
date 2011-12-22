@@ -16,9 +16,7 @@ SurfaceUtils::~SurfaceUtils() {
   // TODO Auto-generated destructor stub
 }
 
-void SurfaceUtils::spriteBlit(SDL_Rect clearRect, SDL_Rect position, Sprite src, SDL_Surface* target){
-  SDL_FillRect(target, &clearRect, 0);
-
+void SurfaceUtils::spriteBlit(SDL_Rect position, Sprite src, SDL_Surface* target){
   SDL_Rect displayRect;
   displayRect.w = src.width();
   displayRect.h = src.height();
@@ -27,4 +25,8 @@ void SurfaceUtils::spriteBlit(SDL_Rect clearRect, SDL_Rect position, Sprite src,
 
   SDL_BlitSurface(src.surface(), &displayRect, target, &position);
   SDL_Flip(target);
+}
+
+void SurfaceUtils::clearRect(SDL_Rect toClear, SDL_Surface* target){
+  SDL_FillRect(target, &toClear, 0);
 }

@@ -14,5 +14,6 @@
 
 class MockSurfaceUtils : public SurfaceUtils {
   public:
-    MOCK_METHOD4(spriteBlit, void(SDL_Rect clear, SDL_Rect display, Sprite sprite, SDL_Surface* target));
+    MOCK_METHOD3(spriteBlit, void(SDL_Rect display, Sprite sprite, SDL_Surface* target));
+    MOCK_METHOD2(clearRect, void(SDL_Rect toClear, SDL_Surface* target));
 };

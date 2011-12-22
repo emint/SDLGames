@@ -170,7 +170,12 @@ int main(int argc, char* args[]) {
     cout << "Error initializing SDL. " << SDL_GetError();
     return -1;
   }
-
+  int flags = IMG_INIT_JPG | IMG_INIT_PNG;
+  int initted=IMG_Init(flags);
+  if(!initted || flags != flags) {
+      cout<<"could not init SDL_Image" << endl;
+      cout<<"Reason: " << IMG_GetError() << endl;
+  }
   window = new Window(&surfaceLoader, &surfaceUtils);
 
   try {
@@ -191,6 +196,8 @@ int main(int argc, char* args[]) {
       Uint32 cur = SDL_GetTicks();
       if (cur - lastDraw > ANI_TIME) {
         cp += 1;
+        lastDraw = cur;
+        window->clearRect(cp-1, 40, 16, 16);
         window->showSprite(cp, 40, newSprite);
       }
     }

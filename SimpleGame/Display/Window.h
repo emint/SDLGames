@@ -22,6 +22,8 @@ class Window {
     inline virtual size_t width() const {return windowSurface->w; }
 
     virtual void showSprite(int x, int y, Sprite sprite);
+
+    virtual void clearRect(int x, int y, size_t width, size_t height);
   private:
     SurfaceLoader* surfaceLoader;
     SurfaceUtils* surfaceUtils;

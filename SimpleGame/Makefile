@@ -44,10 +44,10 @@ TARGETS = driver unit_tests
 
 all: $(TARGETS) dependencies
 
-driver: $(MAIN_OBJS) $(OBJECTS) $(SOURCES)
+driver: $(MAIN_OBJS) $(OBJECTS) 
 	$(CXX) $(CXXFLAGS) $(LIBS) -o $@ $(MAIN_OBJS) $(OBJECTS)
 
-unit_tests: $(TEST_OBJS) $(OBJECTS) $(TEST_SOURCES) 
+unit_tests: $(TEST_OBJS) $(OBJECTS) $(HEADERS) $(SOURCES) $(TEST_SOURCES) 
 	$(CXX) $(CXXFLAGS)  $(LIBS) $(TESTLIBS) -o $@ $(OBJECTS) $(TEST_OBJS)
 
 ##Generate dependencies using -MM gcc flag

@@ -42,25 +42,32 @@ TEST(Window, invalidInitialization) {
 }
 
 TEST(Window, spriteBlit) {
-
   SDL_Surface* validSurface = new SDL_Surface();
   MockSurfaceLoader loader;
   MockSurfaceUtils utils;
 
   Sprite sprite(&loader);
-  sprite.heightIs(16);
-  sprite.widthIs(16);
 
   EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(validSurface));
-  SDL_Rect expectedClear;
   int x_pos = 4, y_pos = 5;
-  expectedClear.x = x_pos;
-  expectedClear.y = y_pos;
-  expectedClear.h = 24;
-  expectedClear.w = 24;
 
-  EXPECT_CALL(utils, spriteBlit(_, _, _, _));
+
+  EXPECT_CALL(utils, spriteBlit( _, _, _));
   Window newWindow(&loader, &utils);
 
   newWindow.showSprite(x_pos, y_pos, sprite);
+}
+
+TEST(Window, clearRect){
+  SDL_Surface* validSurface = new SDL_Surface();
+  MockSurfaceLoader loader;
+  MockSurfaceUtils utils;
+
+  EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(validSurface));
+  int x_pos = 4, y_pos = 5, width = 16, height = 16;
+
+  EXPECT_CALL(utils, clearRect(_,_));
+  Window newWindow(&loader, &utils);
+
+  newWindow.clearRect(x_pos, y_pos, width, height);
 }
