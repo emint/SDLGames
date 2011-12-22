@@ -28,7 +28,7 @@ MAIN_SOURCES = main.cpp
 TEST_SOURCES = unit-test/MovementControlTests.cpp unit-test/Mock_MovementControl.h
 TEST_SOURCES += unit-test/KeyboardControllerTest.cpp unit-test/SpriteTest.cpp
 TEST_SOURCES += unit-test/Mock_SurfaceLoader.h unit-test/WindowTest.cpp
-TEST_SOURCES += unit-test/Mock_SurfaceUtils.h
+TEST_SOURCES += unit-test/Mock_SurfaceUtils.h 
 
 #Objects
 OBJECTS = $(SOURCES:.cpp=.o)

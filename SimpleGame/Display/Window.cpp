@@ -22,5 +22,16 @@ Window::~Window() {
 }
 
 void Window::showSprite(int x, int y, Sprite sprite){
+  SDL_Rect clearRect;
+  SDL_Rect position;
 
+  clearRect.x = x;
+  clearRect.y = y;
+  clearRect.h = sprite.height() + sprite.height()/2;
+  clearRect.w = sprite.width() + sprite.width()/2;
+
+  position.x = x;
+  position.y = y;
+
+  surfaceUtils->spriteBlit(clearRect, position, sprite, windowSurface);
 }

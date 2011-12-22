@@ -201,9 +201,10 @@ WindowTest.o: unit-test/WindowTest.cpp \
  /home/emint/gmock-1.6.0/include/gmock/gmock-generated-matchers.h \
  /home/emint/gmock-1.6.0/include/gmock/gmock-more-actions.h \
  /home/emint/gmock-1.6.0/include/gmock/gmock-generated-nice-strict.h \
- unit-test/Mock_SurfaceLoader.h Display/SurfaceLoader.h Display/Window.h \
- Display/SurfaceLoader.h Display/Sprite.h Display/SurfaceUtils.h \
- Exceptions/ResourceNotFoundException.h unit-test/Mock_SurfaceUtils.h
+ Display/Window.h Display/SurfaceLoader.h Display/Sprite.h \
+ Display/SurfaceUtils.h Exceptions/ResourceNotFoundException.h \
+ unit-test/Mock_SurfaceLoader.h Display/SurfaceLoader.h \
+ unit-test/Mock_SurfaceUtils.h
 Mock_SurfaceUtils.o: unit-test/Mock_SurfaceUtils.h \
  /home/emint/gmock-1.6.0/include/gmock/gmock.h \
  /home/emint/gmock-1.6.0/include/gmock/gmock-actions.h \
