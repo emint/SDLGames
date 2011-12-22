@@ -29,4 +29,5 @@ void SurfaceUtils::spriteBlit(SDL_Rect position, Sprite src, SDL_Surface* target
 
 void SurfaceUtils::clearRect(SDL_Rect toClear, SDL_Surface* target){
   SDL_FillRect(target, &toClear, 0);
+  SDL_Flip(target);
 }

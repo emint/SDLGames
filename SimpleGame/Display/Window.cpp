@@ -34,7 +34,7 @@ void Window::clearRect(int x, int y, size_t width, size_t height){
   SDL_Rect toClear;
   toClear.x = x;
   toClear.y = y;
-  toClear.w = height;
+  toClear.w = width;
   toClear.h = height;
 
   surfaceUtils->clearRect(toClear, windowSurface);

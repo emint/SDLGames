@@ -186,7 +186,9 @@ int main(int argc, char* args[]) {
     int cp = 40;
     SDL_Event event;
     bool close = false;
+    bool cleared = false;
     Uint32 lastDraw = SDL_GetTicks();
+    Uint32 firstDraw = lastDraw;
     while (!close) {
       while (SDL_PollEvent(&event)) {
         if (event.type == SDL_QUIT)
@@ -194,11 +196,17 @@ int main(int argc, char* args[]) {
       }
 
       Uint32 cur = SDL_GetTicks();
-      if (cur - lastDraw > ANI_TIME) {
+      if ((cur-firstDraw < 500) && (cur - lastDraw > ANI_TIME)) {
         cp += 1;
         lastDraw = cur;
-        window->clearRect(cp-1, 40, 16, 16);
         window->showSprite(cp, 40, newSprite);
+      }
+
+      if (cur-firstDraw > 500 && !cleared){
+        cout<<"Clearing! w "<<cp-40<<endl;
+        window->clearRect(40, 40, cp-40+16, 16);
+        window->showSprite(cp, 40, newSprite);
+        cleared=true;
       }
     }
   } catch (exception e) {
