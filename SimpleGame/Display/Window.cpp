@@ -25,10 +25,10 @@ void Window::showSprite(int x, int y, Sprite sprite){
   SDL_Rect clearRect;
   SDL_Rect position;
 
-  clearRect.x = x;
-  clearRect.y = y;
-  clearRect.h = sprite.height() + sprite.height()/2;
-  clearRect.w = sprite.width() + sprite.width()/2;
+  clearRect.x = x-1;
+  clearRect.y = y-1;
+  clearRect.h = 1.5*sprite.height();
+  clearRect.w = 1.5*sprite.width();
 
   position.x = x;
   position.y = y;

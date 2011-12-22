@@ -26,4 +26,5 @@ void SurfaceUtils::spriteBlit(SDL_Rect clearRect, SDL_Rect position, Sprite src,
   displayRect.x = src.selectedYPosition();
 
   SDL_BlitSurface(src.surface(), &displayRect, target, &position);
+  SDL_Flip(target);
 }
