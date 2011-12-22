@@ -13,14 +13,22 @@ LIBS = -lSDL -lSDL_image
 TESTLIBS = $(HOME)/gmock-1.6.0/make/gmock_main.a
 
 #Sources and headers
-HEADERS = Controls/MovementControls.h Interactions/KeyboardController.h
-SOURCES = Controls/MovementControls.cpp Interactions/KeyboardController.cpp
+HEADERS = Controls/MovementControls.h Interactions/KeyboardController.h Display/Sprite.h
+HEADERS += Exceptions/ResourceNotFoundException.h Display/SurfaceLoader.h Display/Window.h
+HEADERS += Display/SurfaceUtils.h Exceptions/InvalidArgumentException.h
+
+SOURCES = Controls/MovementControls.cpp Interactions/KeyboardController.cpp Display/Sprite.cpp
+SOURCES += Exceptions/ResourceNotFoundException.cpp Display/SurfaceLoader.cpp Display/Window.cpp
+SOURCES += Display/SurfaceUtils.cpp Exceptions/InvalidArgumentException.cpp
+
 #Sources that can be run
 MAIN_SOURCES = main.cpp
 
 #For testing source files
 TEST_SOURCES = unit-test/MovementControlTests.cpp unit-test/Mock_MovementControl.h
-TEST_SOURCES += unit-test/KeyboardControllerTest.cpp
+TEST_SOURCES += unit-test/KeyboardControllerTest.cpp unit-test/SpriteTest.cpp
+TEST_SOURCES += unit-test/Mock_SurfaceLoader.h unit-test/WindowTest.cpp
+TEST_SOURCES += unit-test/Mock_SurfaceUtils.h
 
 #Objects
 OBJECTS = $(SOURCES:.cpp=.o)

@@ -2,6 +2,19 @@ MovementControls.o: Controls/MovementControls.cpp \
  Controls/MovementControls.h
 KeyboardController.o: Interactions/KeyboardController.cpp \
  Interactions/KeyboardController.h Controls/MovementControls.h
+Sprite.o: Display/Sprite.cpp Display/Sprite.h Display/SurfaceLoader.h \
+ Exceptions/ResourceNotFoundException.h \
+ Exceptions/InvalidArgumentException.h
+ResourceNotFoundException.o: Exceptions/ResourceNotFoundException.cpp \
+ Exceptions/ResourceNotFoundException.h
+SurfaceLoader.o: Display/SurfaceLoader.cpp Display/SurfaceLoader.h
+Window.o: Display/Window.cpp Display/Window.h Display/SurfaceLoader.h \
+ Display/Sprite.h Display/SurfaceLoader.h Display/SurfaceUtils.h \
+ Exceptions/ResourceNotFoundException.h
+SurfaceUtils.o: Display/SurfaceUtils.cpp Display/SurfaceUtils.h \
+ Display/Sprite.h Display/SurfaceLoader.h
+InvalidArgumentException.o: Exceptions/InvalidArgumentException.cpp \
+ Exceptions/InvalidArgumentException.h
 MovementControlTests.o: unit-test/MovementControlTests.cpp \
  /home/emint/gtest-1.6.0/include/gtest/gtest.h \
  /home/emint/gtest-1.6.0/include/gtest/internal/gtest-internal.h \
@@ -89,3 +102,138 @@ KeyboardControllerTest.o: unit-test/KeyboardControllerTest.cpp \
  /home/emint/gmock-1.6.0/include/gmock/gmock-generated-matchers.h \
  /home/emint/gmock-1.6.0/include/gmock/gmock-more-actions.h \
  /home/emint/gmock-1.6.0/include/gmock/gmock-generated-nice-strict.h
+SpriteTest.o: unit-test/SpriteTest.cpp \
+ /home/emint/gtest-1.6.0/include/gtest/gtest.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-internal.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-port.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-string.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-filepath.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-type-util.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-death-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-death-test-internal.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-message.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-param-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-param-util.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-linked_ptr.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-printers.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-param-util-generated.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest_prod.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-test-part.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-typed-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest_pred_impl.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-internal-utils.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-generated-internal-utils.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-port.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-cardinalities.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-function-mockers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-spec-builders.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-matchers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-matchers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-more-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-nice-strict.h \
+ unit-test/Mock_SurfaceLoader.h Display/SurfaceLoader.h Display/Sprite.h \
+ Display/SurfaceLoader.h Exceptions/ResourceNotFoundException.h \
+ Exceptions/InvalidArgumentException.h
+Mock_SurfaceLoader.o: unit-test/Mock_SurfaceLoader.h \
+ Display/SurfaceLoader.h /home/emint/gmock-1.6.0/include/gmock/gmock.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-internal-utils.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-generated-internal-utils.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-port.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-linked_ptr.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-port.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-internal.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-string.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-filepath.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-type-util.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-death-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-death-test-internal.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-message.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-param-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-param-util.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-printers.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-param-util-generated.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest_prod.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-test-part.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-typed-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest_pred_impl.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-cardinalities.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-function-mockers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-spec-builders.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-matchers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-matchers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-more-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-nice-strict.h
+WindowTest.o: unit-test/WindowTest.cpp \
+ /home/emint/gtest-1.6.0/include/gtest/gtest.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-internal.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-port.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-string.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-filepath.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-type-util.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-death-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-death-test-internal.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-message.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-param-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-param-util.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-linked_ptr.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-printers.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-param-util-generated.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest_prod.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-test-part.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-typed-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest_pred_impl.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-internal-utils.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-generated-internal-utils.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-port.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-cardinalities.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-function-mockers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-spec-builders.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-matchers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-matchers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-more-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-nice-strict.h \
+ unit-test/Mock_SurfaceLoader.h Display/SurfaceLoader.h Display/Window.h \
+ Display/SurfaceLoader.h Display/Sprite.h Display/SurfaceUtils.h \
+ Exceptions/ResourceNotFoundException.h unit-test/Mock_SurfaceUtils.h
+Mock_SurfaceUtils.o: unit-test/Mock_SurfaceUtils.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-internal-utils.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-generated-internal-utils.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-port.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-linked_ptr.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-port.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-internal.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-string.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-filepath.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-type-util.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-death-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-death-test-internal.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-message.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-param-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-param-util.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-printers.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-param-util-generated.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest_prod.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-test-part.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-typed-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest_pred_impl.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-cardinalities.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-function-mockers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-spec-builders.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-matchers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-matchers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-more-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-nice-strict.h \
+ Display/SurfaceUtils.h Display/Sprite.h Display/SurfaceLoader.h
