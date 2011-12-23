@@ -16,10 +16,14 @@ TESTLIBS = $(HOME)/gmock-1.6.0/make/gmock_main.a
 HEADERS = Controls/MovementControls.h Interactions/KeyboardController.h Display/Sprite.h
 HEADERS += Exceptions/ResourceNotFoundException.h Display/SurfaceLoader.h Display/Window.h
 HEADERS += Display/SurfaceUtils.h Exceptions/InvalidArgumentException.h Display/Rect.h
+HEADERS += Character/CharacterModel.h Character/CharacterView.h Character/CharacterController.h
+HEADERS += Utils/TimeProvider.h
 
 SOURCES = Controls/MovementControls.cpp Interactions/KeyboardController.cpp Display/Sprite.cpp
 SOURCES += Exceptions/ResourceNotFoundException.cpp Display/SurfaceLoader.cpp Display/Window.cpp
 SOURCES += Display/SurfaceUtils.cpp Exceptions/InvalidArgumentException.cpp Display/Rect.cpp
+SOURCES += Character/CharacterModel.cpp Character/CharacterView.cpp Character/CharacterController.cpp
+SOURCES += Utils/TimeProvider.cpp
 
 #Sources that can be run
 MAIN_SOURCES = main.cpp
@@ -27,16 +31,16 @@ MAIN_SOURCES = main.cpp
 #For testing source files
 TEST_SOURCES = unit-test/MovementControlTests.cpp 
 TEST_SOURCES += unit-test/KeyboardControllerTest.cpp unit-test/SpriteTest.cpp
-TEST_SOURCES +=  unit-test/WindowTest.cpp
+TEST_SOURCES +=  unit-test/WindowTest.cpp unit-test/CharacterControllerTest.cpp
 
 TEST_HEADERS = unit-test/Mock_MovementControl.h unit-test/Mock_SurfaceLoader.h 
-TEST_HEADERS += unit-test/Mock_SurfaceUtils.h 
+TEST_HEADERS += unit-test/Mock_SurfaceUtils.h unit-test/Mock_TimeProvider.h
+TEST_HEADERS += unit-test/Mock_CharacterModel.h unit-test/Mock_CharacterView.h
 #Objects
 OBJECTS = $(SOURCES:.cpp=.o)
 #Objects that can be run
 MAIN_OBJS = $(MAIN_SOURCES:.cpp=.o)
 TEST_OBJS = $(TEST_SOURCES:.cpp=.o)
-
 #Dependency file to write
 DEPENDENCY_FILE = Makefile.dependencies
 

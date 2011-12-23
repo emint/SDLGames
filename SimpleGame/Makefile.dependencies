@@ -16,6 +16,14 @@ SurfaceUtils.o: Display/SurfaceUtils.cpp Display/SurfaceUtils.h \
 InvalidArgumentException.o: Exceptions/InvalidArgumentException.cpp \
  Exceptions/InvalidArgumentException.h
 Rect.o: Display/Rect.cpp Display/Rect.h
+CharacterModel.o: Character/CharacterModel.cpp Character/CharacterModel.h \
+ Controls/MovementControls.h Utils/TimeProvider.h
+CharacterView.o: Character/CharacterView.cpp Character/CharacterView.h
+CharacterController.o: Character/CharacterController.cpp \
+ Character/CharacterController.h Utils/TimeProvider.h \
+ Character/CharacterModel.h Controls/MovementControls.h \
+ Character/CharacterView.h
+TimeProvider.o: Utils/TimeProvider.cpp Utils/TimeProvider.h
 MovementControlTests.o: unit-test/MovementControlTests.cpp \
  /home/emint/gtest-1.6.0/include/gtest/gtest.h \
  /home/emint/gtest-1.6.0/include/gtest/internal/gtest-internal.h \
@@ -141,3 +149,41 @@ WindowTest.o: unit-test/WindowTest.cpp \
  Display/SurfaceUtils.h Exceptions/ResourceNotFoundException.h \
  unit-test/Mock_SurfaceLoader.h Display/SurfaceLoader.h \
  unit-test/Mock_SurfaceUtils.h
+CharacterControllerTest.o: unit-test/CharacterControllerTest.cpp \
+ /home/emint/gmock-1.6.0/include/gmock/gmock.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-internal-utils.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-generated-internal-utils.h \
+ /home/emint/gmock-1.6.0/include/gmock/internal/gmock-port.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-linked_ptr.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-port.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-internal.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-string.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-filepath.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-type-util.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-death-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-death-test-internal.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-message.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-param-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-param-util.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-printers.h \
+ /home/emint/gtest-1.6.0/include/gtest/internal/gtest-param-util-generated.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest_prod.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-test-part.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest-typed-test.h \
+ /home/emint/gtest-1.6.0/include/gtest/gtest_pred_impl.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-cardinalities.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-function-mockers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-spec-builders.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-matchers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-matchers.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-more-actions.h \
+ /home/emint/gmock-1.6.0/include/gmock/gmock-generated-nice-strict.h \
+ Character/CharacterController.h Utils/TimeProvider.h \
+ Character/CharacterModel.h Controls/MovementControls.h \
+ Character/CharacterView.h unit-test/Mock_CharacterModel.h \
+ Character/CharacterModel.h unit-test/Mock_CharacterView.h \
+ Character/CharacterView.h unit-test/Mock_TimeProvider.h \
+ unit-test/Mock_MovementControl.h
