@@ -17,11 +17,11 @@ CharacterView::~CharacterView() {
 }
 
 void CharacterView::display() {
-  window_->clearRect(curSpriteLocX, curSpriteLocY, sprite->width(), sprite->height());
+  window_->clearRect(curSpriteLocX, curSpriteLocY, sprite_->width(), sprite_->height());
   int newX = model_->posX();
   int newY = model_->posY();
 
-  window_->showSprite(newX, newY, *sprite);
+  window_->showSprite(newX, newY, *sprite_);
   curSpriteLocX = newX;
   curSpriteLocY = newY;
   cout<<model_->posX()<<","<<model_->posY()<<endl;

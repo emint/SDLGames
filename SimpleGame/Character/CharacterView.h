@@ -16,13 +16,13 @@ class CharacterView {
     CharacterView(CharacterModel* model, Window* window);
     virtual ~CharacterView();
 
-    virtual inline void spriteIs(Sprite* sprite_) { sprite = sprite_; }
+    virtual inline void spriteIs(Sprite* sprite) { sprite_ = sprite; }
 
     virtual void display();
   private:
     CharacterModel* model_;
     Window* window_;
-    Sprite* sprite;
+    Sprite* sprite_;
 
     int curSpriteLocX;
     int curSpriteLocY;

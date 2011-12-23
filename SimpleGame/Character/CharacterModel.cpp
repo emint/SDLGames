@@ -8,9 +8,7 @@
 #include "CharacterModel.h"
 
 CharacterModel::CharacterModel(MovementControls* movementControls) :
-  controls_(movementControls), pos_x(0), pos_y(0){
-  // TODO Auto-generated constructor stub
-
+  controls_(movementControls), posX_(0), posY_(0){
 }
 
 CharacterModel::~CharacterModel() {
@@ -18,6 +16,14 @@ CharacterModel::~CharacterModel() {
 }
 
 void CharacterModel::moveFor(Uint32 time) {
-  pos_x += time*controls_->xVelocity();
-  pos_y += time*controls_->yVelocity();
+  posX_ += time*controls_->xVelocity();
+  posY_ += time*controls_->yVelocity();
+}
+
+int CharacterModel::posX() const {
+  return posX_;
+}
+
+int CharacterModel::posY() const {
+  return posY_;
 }

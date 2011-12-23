@@ -29,11 +29,9 @@ TEST(CharacterView, displaysProperly){
   EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(new SDL_Surface()));
   MockWindow window(&loader, new MockSurfaceUtils());
 
-  CharacterView view(&model, &window);
-
-  EXPECT_CALL(model, posX()).WillRepeatedly(Return(100));
   EXPECT_CALL(model, posY()).WillRepeatedly(Return(100));
-
+  EXPECT_CALL(model, posX()).WillRepeatedly(Return(100));
+  CharacterView view(&model, &window);
   Sprite sprite (&loader);
   sprite.heightIs(16);
   sprite.widthIs(16);

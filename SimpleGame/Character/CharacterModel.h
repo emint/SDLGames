@@ -9,8 +9,7 @@
 #define CHARACTERMODEL_H_
 
 #include "Controls/MovementControls.h"
-#include "Utils/TimeProvider.h"
-
+#include "SDL/SDL.h"
 class CharacterModel {
   public:
     CharacterModel(MovementControls* controls);
@@ -18,13 +17,13 @@ class CharacterModel {
 
     virtual void moveFor(Uint32 timeToMove);
 
-    virtual inline int posX() const { return pos_x; }
-    virtual inline int posY() const { return pos_y; }
+    virtual int posX() const;
+    virtual int posY() const;
   private:
     MovementControls* controls_;
 
-    int pos_x;
-    int pos_y;
+    int posX_;
+    int posY_;
 };
 
 #endif /* CHARACTERMODEL_H_ */

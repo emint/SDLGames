@@ -21,11 +21,11 @@ InvalidArgumentException.o: Exceptions/InvalidArgumentException.cpp \
  Exceptions/InvalidArgumentException.h
 Rect.o: Display/Rect.cpp Display/Rect.h
 CharacterModel.o: Character/CharacterModel.cpp Character/CharacterModel.h \
- Controls/MovementControls.h Utils/TimeProvider.h
+ Controls/MovementControls.h
 CharacterView.o: Character/CharacterView.cpp Character/CharacterView.h \
  Display/Window.h Display/SurfaceLoader.h Display/Sprite.h \
  Display/SurfaceUtils.h Display/Rect.h Character/CharacterModel.h \
- Controls/MovementControls.h Utils/TimeProvider.h
+ Controls/MovementControls.h
 CharacterController.o: Character/CharacterController.cpp \
  Character/CharacterController.h Utils/TimeProvider.h \
  Character/CharacterModel.h Controls/MovementControls.h \
@@ -239,7 +239,7 @@ CharacterModelTest.o: unit-test/CharacterModelTest.cpp \
  /home/emint/gmock-1.6.0/include/gmock/gmock-more-actions.h \
  /home/emint/gmock-1.6.0/include/gmock/gmock-generated-nice-strict.h \
  unit-test/Mock_MovementControl.h Controls/MovementControls.h \
- Character/CharacterModel.h Utils/TimeProvider.h
+ Character/CharacterModel.h
 CharacterViewTest.o: unit-test/CharacterViewTest.cpp \
  /home/emint/gmock-1.6.0/include/gmock/gmock.h \
  /home/emint/gmock-1.6.0/include/gmock/gmock-actions.h \
@@ -275,7 +275,7 @@ CharacterViewTest.o: unit-test/CharacterViewTest.cpp \
  Character/CharacterView.h Display/Window.h Display/SurfaceLoader.h \
  Display/Sprite.h Display/SurfaceUtils.h Display/Rect.h \
  Character/CharacterModel.h Controls/MovementControls.h \
- Utils/TimeProvider.h unit-test/Mock_MovementControl.h \
- unit-test/Mock_CharacterModel.h Character/CharacterModel.h \
- unit-test/Mock_SurfaceLoader.h Display/SurfaceLoader.h \
- unit-test/Mock_SurfaceUtils.h unit-test/Mock_Window.h
+ unit-test/Mock_MovementControl.h unit-test/Mock_CharacterModel.h \
+ Character/CharacterModel.h unit-test/Mock_SurfaceLoader.h \
+ Display/SurfaceLoader.h unit-test/Mock_SurfaceUtils.h \
+ unit-test/Mock_Window.h
