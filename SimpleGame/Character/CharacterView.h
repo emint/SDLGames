@@ -18,14 +18,20 @@ class CharacterView {
 
     virtual inline void spriteIs(Sprite* sprite) { sprite_ = sprite; }
 
+    virtual void setSpriteAndDisplay(Sprite* sprite, int x, int y);
+
     virtual void display();
+
+    virtual int curSpriteLocX() const;
+    virtual int curSpriteLocY() const;
   private:
     CharacterModel* model_;
     Window* window_;
     Sprite* sprite_;
 
-    int curSpriteLocX;
-    int curSpriteLocY;
+    int curSpriteLocX_;
+    int curSpriteLocY_;
+
 };
 
 #endif /* CHARACTERVIEW_H_ */

@@ -6,6 +6,8 @@
  */
 
 #include "CharacterController.h"
+#include <iostream>
+using namespace std;
 
 CharacterController::CharacterController(TimeProvider* time, CharacterModel* model,
     CharacterView* view) : time_(time), model_(model), view_(view) {
@@ -20,6 +22,14 @@ CharacterController::~CharacterController() {
 void CharacterController::move() {
   Uint32 curTime = time_->currentTimeInMs();
   Uint32 passedTime = curTime - lastStateChange;
-  model_->moveFor(passedTime);
+  cout<<"cur "<<curTime<<" last "<<lastStateChange<<endl;
+  //TODO FIX ME This is a hack!
+  model_->moveFor(passedTime/10);
   lastStateChange = curTime;
+}
+
+void CharacterController::display() {
+  if (view_->curSpriteLocX() != model_->posX() || view_->curSpriteLocY() != model_->posY()){
+    view_->display();
+  }
 }

@@ -5,6 +5,16 @@
 #include "Display/SurfaceLoader.h"
 #include "Display/SurfaceUtils.h"
 
+#include "Controls/MovementControls.h"
+#include "Interactions/KeyboardController.h"
+
+#include "Character/CharacterController.h"
+#include "Character/CharacterModel.h"
+#include "Character/CharacterView.h"
+
+#include "Utils/TimeProvider.h"
+
+
 #include <iostream>
 #include <stdlib.h>
 #include <cmath>
@@ -176,37 +186,41 @@ int main(int argc, char* args[]) {
       cout<<"could not init SDL_Image" << endl;
       cout<<"Reason: " << IMG_GetError() << endl;
   }
+
   window = new Window(&surfaceLoader, &surfaceUtils);
+  TimeProvider timeProvider;
+
+  MovementControls movementControls;
+
+  CharacterModel model(&movementControls);
+  CharacterView view(&model, window);
+  CharacterController controller(&timeProvider, &model, &view);
+
+  KeyboardController keyboardController(&movementControls, &controller);
+
 
   try {
     Sprite newSprite(&surfaceLoader);
     newSprite.spriteIs(character);
 
-    window->showSprite(40, 40, newSprite);
-    int cp = 40;
-    SDL_Event event;
+    view.setSpriteAndDisplay(&newSprite, 0, 0);
+
     bool close = false;
-    bool cleared = false;
     Uint32 lastDraw = SDL_GetTicks();
-    Uint32 firstDraw = lastDraw;
     while (!close) {
+      SDL_Event event;
       while (SDL_PollEvent(&event)) {
         if (event.type == SDL_QUIT)
           close = true;
-      }
 
-      Uint32 cur = SDL_GetTicks();
-      if ((cur-firstDraw < 500) && (cur - lastDraw > ANI_TIME)) {
-        cp += 1;
-        lastDraw = cur;
-        window->showSprite(cp, 40, newSprite);
-      }
 
-      if (cur-firstDraw > 500 && !cleared){
-        cout<<"Clearing! w "<<cp-40<<endl;
-        window->clearRect(40, 40, cp-40+16, 16);
-        window->showSprite(cp, 40, newSprite);
-        cleared=true;
+        keyboardController.keyEventIs(event);
+
+      }
+      if ((SDL_GetTicks() - lastDraw) > ANI_TIME) {
+        controller.move();
+        controller.display();
+        lastDraw = SDL_GetTicks();
       }
     }
   } catch (exception e) {

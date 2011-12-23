@@ -21,6 +21,7 @@
 
 using ::testing::Return;
 using ::testing::_;
+
 TEST(CharacterView, displaysProperly){
   MockMovementControls mockControls;
   MockCharacterModel model(&mockControls);
@@ -29,16 +30,38 @@ TEST(CharacterView, displaysProperly){
   EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(new SDL_Surface()));
   MockWindow window(&loader, new MockSurfaceUtils());
 
-  EXPECT_CALL(model, posY()).WillRepeatedly(Return(100));
   EXPECT_CALL(model, posX()).WillRepeatedly(Return(100));
+  EXPECT_CALL(model, posY()).WillRepeatedly(Return(120));
   CharacterView view(&model, &window);
   Sprite sprite (&loader);
   sprite.heightIs(16);
   sprite.widthIs(16);
 
   EXPECT_CALL(window, clearRect(0, 0, sprite.width(), sprite.height())).Times(1);
-  EXPECT_CALL(window, showSprite(100, 100, _)).Times(1);
+  EXPECT_CALL(window, showSprite(100, 120, _)).Times(1);
 
   view.spriteIs(&sprite);
   view.display();
+
+  EXPECT_EQ(100, view.curSpriteLocX());
+  EXPECT_EQ(120, view.curSpriteLocY());
+}
+
+TEST(CharacterView, setAndDisplaysProperly){
+  MockMovementControls mockControls;
+  MockCharacterModel model(&mockControls);
+
+  MockSurfaceLoader loader;
+  EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(new SDL_Surface()));
+  MockWindow window(&loader, new MockSurfaceUtils());
+
+  CharacterView view(&model, &window);
+  Sprite sprite (&loader);
+
+  EXPECT_CALL(window, showSprite(100, 120, _)).Times(1);
+
+  view.setSpriteAndDisplay(&sprite, 100, 120);
+
+  EXPECT_EQ(100, view.curSpriteLocX());
+  EXPECT_EQ(120, view.curSpriteLocY());
 }

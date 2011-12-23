@@ -14,16 +14,16 @@ MovementControls::~MovementControls(){
 void MovementControls::movementIs(MovementType movementType){
   switch (movementType){
     case UP:
-      yVel += yVelInc;
+      yVel = -1*yVelInc;
       break;
     case DOWN:
-      yVel -= yVelInc;
+      yVel = yVelInc;
       break;
     case RIGHT:
-      xVel += xVelInc;
+      xVel = xVelInc;
       break;
     case LEFT:
-      xVel -= xVelInc;
+      xVel = -1*xVelInc;
       break;
     case UP_DOWN_STOP:
       yVel = 0;

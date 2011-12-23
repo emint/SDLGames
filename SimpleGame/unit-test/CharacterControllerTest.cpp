@@ -42,6 +42,58 @@ TEST(CharacterController, callsMoveProperly) {
   MockTimeProvider time;
   EXPECT_CALL(time, currentTimeInMs()).WillOnce(Return(0)).WillOnce(Return(100));
   EXPECT_CALL(mockModel, moveFor(100));
+
   CharacterController controller(&time, &mockModel, &mockView);
   controller.move();
+}
+
+TEST(CharacterController, delegatesDisplayIfChangeX){
+  MockMovementControls mockMovement;
+  MockCharacterModel mockModel(&mockMovement);
+  MockSurfaceLoader loader;
+  EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(new SDL_Surface()));
+  MockCharacterView mockView (&mockModel, new MockWindow(&loader, new MockSurfaceUtils()));
+  MockTimeProvider time;
+  EXPECT_CALL(mockView, display()).Times(1);
+  EXPECT_CALL(mockView, curSpriteLocX()).WillOnce(Return(0));
+  EXPECT_CALL(mockModel, posX()).WillOnce(Return(10));
+
+  CharacterController controller(&time, &mockModel, &mockView);
+  controller.display();
+}
+
+TEST(CharacterController, delegatesDisplayIfChangeY){
+  MockMovementControls mockMovement;
+  MockCharacterModel mockModel(&mockMovement);
+  MockSurfaceLoader loader;
+  EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(new SDL_Surface()));
+  MockCharacterView mockView (&mockModel, new MockWindow(&loader, new MockSurfaceUtils()));
+  MockTimeProvider time;
+  EXPECT_CALL(mockView, display()).Times(1);
+  EXPECT_CALL(mockView, curSpriteLocX()).WillOnce(Return(0));
+  EXPECT_CALL(mockModel, posX()).WillOnce(Return(0));
+  EXPECT_CALL(mockView, curSpriteLocY()).WillOnce(Return(0));
+  EXPECT_CALL(mockModel, posY()).WillOnce(Return(10));
+
+  CharacterController controller(&time, &mockModel, &mockView);
+  controller.display();
+}
+
+TEST(CharacterController, doesNotDelegateIfNoChange){
+  MockMovementControls mockMovement;
+  MockCharacterModel mockModel(&mockMovement);
+  MockSurfaceLoader loader;
+  EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(new SDL_Surface()));
+  MockCharacterView mockView (&mockModel, new MockWindow(&loader, new MockSurfaceUtils()));
+  MockTimeProvider time;
+
+  EXPECT_CALL(mockView, display()).Times(0);
+
+  EXPECT_CALL(mockView, curSpriteLocY()).WillOnce(Return(0));
+  EXPECT_CALL(mockModel, posY()).WillOnce(Return(0));
+  EXPECT_CALL(mockView, curSpriteLocX()).WillOnce(Return(0));
+  EXPECT_CALL(mockModel, posX()).WillOnce(Return(0));
+
+  CharacterController controller(&time, &mockModel, &mockView);
+  controller.display();
 }

@@ -17,6 +17,8 @@ class CharacterController {
     virtual ~CharacterController();
 
     virtual void move();
+
+    virtual void display();
   private:
     TimeProvider* time_;
     CharacterModel* model_;

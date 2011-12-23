@@ -13,7 +13,7 @@ TEST(MovementControls, upKey){
 
   moveControls.movementIs(MovementControls::UP);
 
-  EXPECT_EQ(moveControls.yVelocity(), 2);
+  EXPECT_EQ(moveControls.yVelocity(), -2);
   EXPECT_EQ(moveControls.xVelocity(), 0);
 
   moveControls.movementIs(MovementControls::UP_DOWN_STOP);
@@ -27,7 +27,7 @@ TEST(MovementControls, downKey){
 
   moveControls.movementIs(MovementControls::DOWN);
 
-  EXPECT_EQ(moveControls.yVelocity(), -2);
+  EXPECT_EQ(moveControls.yVelocity(), 2);
   EXPECT_EQ(moveControls.xVelocity(), 0);
 
   moveControls.movementIs(MovementControls::UP_DOWN_STOP);
@@ -71,10 +71,10 @@ TEST(MovementControls, twoKeys){
   moveControls.movementIs(MovementControls::DOWN);
 
   EXPECT_EQ(moveControls.xVelocity(), 2);
-  EXPECT_EQ(moveControls.yVelocity(), -2);
+  EXPECT_EQ(moveControls.yVelocity(), 2);
 
   moveControls.movementIs(MovementControls::LEFT_RIGHT_STOP);
 
   EXPECT_EQ(moveControls.xVelocity(), 0);
-  EXPECT_EQ(moveControls.yVelocity(), -2);
+  EXPECT_EQ(moveControls.yVelocity(), 2);
 }

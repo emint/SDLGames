@@ -22,5 +22,8 @@ class MockCharacterView : public CharacterView {
     }
 
     MOCK_METHOD0(display, void());
+
+    MOCK_CONST_METHOD0(curSpriteLocX, int());
+    MOCK_CONST_METHOD0(curSpriteLocY, int());
 };
 #endif

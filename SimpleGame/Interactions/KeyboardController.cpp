@@ -15,7 +15,7 @@ KeyboardController::~KeyboardController() {
 
 void KeyboardController::keyEventIs(SDL_Event event) {
   MovementControls::MovementType movementEvent;
-
+  bool moved = true;
   if (event.type == SDL_KEYDOWN) {
     if (event.key.keysym.sym == SDLK_UP){
       movementEvent = MovementControls::UP;
@@ -39,9 +39,10 @@ void KeyboardController::keyEventIs(SDL_Event event) {
       return;
     }
   } else {
-    cerr<<"Invalid key-type passed to "<<__FILE__<<endl;
-    return;
+    moved = false;
   }
-  character->move();
-  movementControls->movementIs(movementEvent);
+
+  if (moved){
+    movementControls->movementIs(movementEvent);
+  }
 }

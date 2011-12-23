@@ -10,19 +10,37 @@
 using namespace std;
 
 CharacterView::CharacterView(CharacterModel* model, Window* window) : model_(model), window_(window),
-  curSpriteLocX(0), curSpriteLocY(0) {
+  curSpriteLocX_(0), curSpriteLocY_(0) {
 }
 
 CharacterView::~CharacterView() {
 }
 
 void CharacterView::display() {
-  window_->clearRect(curSpriteLocX, curSpriteLocY, sprite_->width(), sprite_->height());
   int newX = model_->posX();
   int newY = model_->posY();
 
+
+  window_->clearRect(curSpriteLocX_, curSpriteLocY_, sprite_->width(), sprite_->height());
+
   window_->showSprite(newX, newY, *sprite_);
-  curSpriteLocX = newX;
-  curSpriteLocY = newY;
-  cout<<model_->posX()<<","<<model_->posY()<<endl;
+
+  curSpriteLocX_ = newX;
+  curSpriteLocY_ = newY;
+}
+
+void CharacterView::setSpriteAndDisplay(Sprite* sprite, int x, int y){
+  sprite_ = sprite;
+
+  curSpriteLocX_ = x;
+  curSpriteLocY_ = y;
+
+  window_->showSprite(curSpriteLocX_, curSpriteLocY_, *sprite_);
+}
+int CharacterView::curSpriteLocX() const {
+  return curSpriteLocX_;
+}
+
+int CharacterView::curSpriteLocY() const {
+  return curSpriteLocY_;
 }
