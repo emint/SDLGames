@@ -8,10 +8,24 @@
 #ifndef CHARACTERVIEW_H_
 #define CHARACTERVIEW_H_
 
+#include "Display/Window.h"
+#include "CharacterModel.h"
+#include "Display/Sprite.h"
 class CharacterView {
   public:
-    CharacterView();
+    CharacterView(CharacterModel* model, Window* window);
     virtual ~CharacterView();
+
+    virtual inline void spriteIs(Sprite* sprite_) { sprite = sprite_; }
+
+    virtual void display();
+  private:
+    CharacterModel* model_;
+    Window* window_;
+    Sprite* sprite;
+
+    int curSpriteLocX;
+    int curSpriteLocY;
 };
 
 #endif /* CHARACTERVIEW_H_ */

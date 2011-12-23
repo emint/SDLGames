@@ -9,6 +9,7 @@
 #include "Mock_MovementControl.h"
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
+#include "Mock_CharacterController.h"
 #include "SDL/SDL.h"
 
 SDL_Event makeEvent(Uint8 type, const SDLKey key){
@@ -27,7 +28,9 @@ SDL_Event makeEvent(Uint8 type, const SDLKey key){
 
 TEST(KeyboardController, upKeyPressed){
   MockMovementControls mockMovementControls;
-  KeyboardController controller(&mockMovementControls);
+  MockCharacterController mockCharController;
+  EXPECT_CALL(mockCharController, move()).Times(1);
+  KeyboardController controller(&mockMovementControls, &mockCharController);
 
   EXPECT_CALL(mockMovementControls, movementIs(MovementControls::UP));
 
@@ -38,7 +41,9 @@ TEST(KeyboardController, upKeyPressed){
 
 TEST(KeyboardController, downKeyPressed){
   MockMovementControls mockMovementControls;
-  KeyboardController controller(&mockMovementControls);
+  MockCharacterController mockCharController;
+  EXPECT_CALL(mockCharController, move()).Times(1);
+  KeyboardController controller(&mockMovementControls, &mockCharController);
 
   EXPECT_CALL(mockMovementControls, movementIs(MovementControls::DOWN));
 
@@ -49,7 +54,9 @@ TEST(KeyboardController, downKeyPressed){
 
 TEST(KeyboardController, leftKeyPressed){
   MockMovementControls mockMovementControls;
-  KeyboardController controller(&mockMovementControls);
+  MockCharacterController mockCharController;
+  EXPECT_CALL(mockCharController, move()).Times(1);
+  KeyboardController controller(&mockMovementControls, &mockCharController);
 
   EXPECT_CALL(mockMovementControls, movementIs(MovementControls::LEFT));
 
@@ -60,7 +67,9 @@ TEST(KeyboardController, leftKeyPressed){
 
 TEST(KeyboardController, rightKeyPressed){
   MockMovementControls mockMovementControls;
-  KeyboardController controller(&mockMovementControls);
+  MockCharacterController mockCharController;
+  EXPECT_CALL(mockCharController, move()).Times(1);
+  KeyboardController controller(&mockMovementControls, &mockCharController);
 
   EXPECT_CALL(mockMovementControls, movementIs(MovementControls::RIGHT));
 
@@ -71,7 +80,9 @@ TEST(KeyboardController, rightKeyPressed){
 
 TEST(KeyboardController, upKeyReleased){
   MockMovementControls mockMovementControls;
-  KeyboardController controller(&mockMovementControls);
+  MockCharacterController mockCharController;
+  EXPECT_CALL(mockCharController, move()).Times(1);
+  KeyboardController controller(&mockMovementControls, &mockCharController);
 
   EXPECT_CALL(mockMovementControls, movementIs(MovementControls::UP_DOWN_STOP));
 
@@ -82,7 +93,9 @@ TEST(KeyboardController, upKeyReleased){
 
 TEST(KeyboardController, downKeyReleased){
   MockMovementControls mockMovementControls;
-  KeyboardController controller(&mockMovementControls);
+  MockCharacterController mockCharController;
+  EXPECT_CALL(mockCharController, move()).Times(1);
+  KeyboardController controller(&mockMovementControls, &mockCharController);
 
   EXPECT_CALL(mockMovementControls, movementIs(MovementControls::UP_DOWN_STOP));
 
@@ -92,8 +105,10 @@ TEST(KeyboardController, downKeyReleased){
 }
 
 TEST(KeyboardController, leftKeyReleased){
+  MockCharacterController mockCharController;
+  EXPECT_CALL(mockCharController, move()).Times(1);
   MockMovementControls mockMovementControls;
-  KeyboardController controller(&mockMovementControls);
+  KeyboardController controller(&mockMovementControls, &mockCharController);
 
   EXPECT_CALL(mockMovementControls, movementIs(MovementControls::LEFT_RIGHT_STOP));
 
@@ -104,7 +119,9 @@ TEST(KeyboardController, leftKeyReleased){
 
 TEST(KeyboardController, rightKeyReleased){
   MockMovementControls mockMovementControls;
-  KeyboardController controller(&mockMovementControls);
+  MockCharacterController mockCharController;
+  EXPECT_CALL(mockCharController, move()).Times(1);
+  KeyboardController controller(&mockMovementControls, &mockCharController);
 
   EXPECT_CALL(mockMovementControls, movementIs(MovementControls::LEFT_RIGHT_STOP));
 

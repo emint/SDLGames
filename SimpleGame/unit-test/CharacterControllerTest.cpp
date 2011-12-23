@@ -8,20 +8,26 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include "SDL/SDL.h"
+
 #include "Character/CharacterController.h"
 #include "Mock_CharacterModel.h"
 #include "Mock_CharacterView.h"
 #include "Mock_TimeProvider.h"
 #include "Mock_MovementControl.h"
+#include "Mock_SurfaceUtils.h"
+#include "Mock_SurfaceLoader.h"
+#include "Mock_Window.h"
 
-#include <iostream>
-using namespace std;
 using ::testing::Return;
+using ::testing::_;
 
 TEST(CharacterController, initializedTime){
   MockMovementControls mockMovement;
   MockCharacterModel mockModel(&mockMovement);
-  MockCharacterView mockView;
+  MockSurfaceLoader loader;
+  EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(new SDL_Surface()));
+  MockCharacterView mockView (&mockModel, new MockWindow(&loader, new MockSurfaceUtils()));
   MockTimeProvider time;
   EXPECT_CALL(time, currentTimeInMs()).WillOnce(Return(0));
   CharacterController controller(&time, &mockModel, &mockView);
@@ -30,7 +36,9 @@ TEST(CharacterController, initializedTime){
 TEST(CharacterController, callsMoveProperly) {
   MockMovementControls mockMovement;
   MockCharacterModel mockModel(&mockMovement);
-  MockCharacterView mockView;
+  MockSurfaceLoader loader;
+  EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(new SDL_Surface()));
+  MockCharacterView mockView (&mockModel, new MockWindow(&loader, new MockSurfaceUtils()));
   MockTimeProvider time;
   EXPECT_CALL(time, currentTimeInMs()).WillOnce(Return(0)).WillOnce(Return(100));
   EXPECT_CALL(mockModel, moveFor(100));

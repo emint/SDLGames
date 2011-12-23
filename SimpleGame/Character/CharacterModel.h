@@ -17,6 +17,9 @@ class CharacterModel {
     virtual ~CharacterModel();
 
     virtual void moveFor(Uint32 timeToMove);
+
+    virtual inline int posX() const { return pos_x; }
+    virtual inline int posY() const { return pos_y; }
   private:
     MovementControls* controls_;
 

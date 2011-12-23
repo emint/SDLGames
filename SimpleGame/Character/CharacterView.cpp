@@ -6,12 +6,23 @@
  */
 
 #include "CharacterView.h"
+#include <iostream>
+using namespace std;
 
-CharacterView::CharacterView() {
-  // TODO Auto-generated constructor stub
-
+CharacterView::CharacterView(CharacterModel* model, Window* window) : model_(model), window_(window),
+  curSpriteLocX(0), curSpriteLocY(0) {
 }
 
 CharacterView::~CharacterView() {
-  // TODO Auto-generated destructor stub
+}
+
+void CharacterView::display() {
+  window_->clearRect(curSpriteLocX, curSpriteLocY, sprite->width(), sprite->height());
+  int newX = model_->posX();
+  int newY = model_->posY();
+
+  window_->showSprite(newX, newY, *sprite);
+  curSpriteLocX = newX;
+  curSpriteLocY = newY;
+  cout<<model_->posX()<<","<<model_->posY()<<endl;
 }

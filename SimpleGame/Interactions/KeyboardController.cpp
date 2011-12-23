@@ -42,6 +42,6 @@ void KeyboardController::keyEventIs(SDL_Event event) {
     cerr<<"Invalid key-type passed to "<<__FILE__<<endl;
     return;
   }
-
+  character->move();
   movementControls->movementIs(movementEvent);
 }

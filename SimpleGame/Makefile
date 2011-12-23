@@ -31,11 +31,13 @@ MAIN_SOURCES = main.cpp
 #For testing source files
 TEST_SOURCES = unit-test/MovementControlTests.cpp 
 TEST_SOURCES += unit-test/KeyboardControllerTest.cpp unit-test/SpriteTest.cpp
-TEST_SOURCES +=  unit-test/WindowTest.cpp unit-test/CharacterControllerTest.cpp
+TEST_SOURCES += unit-test/WindowTest.cpp unit-test/CharacterControllerTest.cpp
+TEST_SOURCES += unit-test/CharacterModelTest.cpp unit-test/CharacterViewTest.cpp
 
 TEST_HEADERS = unit-test/Mock_MovementControl.h unit-test/Mock_SurfaceLoader.h 
 TEST_HEADERS += unit-test/Mock_SurfaceUtils.h unit-test/Mock_TimeProvider.h
 TEST_HEADERS += unit-test/Mock_CharacterModel.h unit-test/Mock_CharacterView.h
+TEST_HEADERS += unit-test/Mock_CharacterController.h unit-test/Mock_Window.h
 #Objects
 OBJECTS = $(SOURCES:.cpp=.o)
 #Objects that can be run

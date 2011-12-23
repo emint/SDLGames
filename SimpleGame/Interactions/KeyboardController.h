@@ -9,10 +9,11 @@
 #define KEYBOARDCONTROLLER_H_
 #include "SDL/SDL.h"
 #include "Controls/MovementControls.h"
-
+#include "Character/CharacterController.h"
 class KeyboardController {
   public:
-    KeyboardController(MovementControls* movementControls) : movementControls(movementControls) {
+    KeyboardController(MovementControls* movementControls, CharacterController* character) :
+      movementControls(movementControls), character(character) {
     }
     virtual ~KeyboardController();
 
@@ -20,6 +21,7 @@ class KeyboardController {
 
   private:
     MovementControls* movementControls;
+    CharacterController* character;
 };
 
 #endif /* KEYBOARDCONTROLLER_H_ */
