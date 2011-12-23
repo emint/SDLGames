@@ -41,7 +41,7 @@ TEST(CharacterController, callsMoveProperly) {
   MockCharacterView mockView (&mockModel, new MockWindow(&loader, new MockSurfaceUtils()));
   MockTimeProvider time;
   EXPECT_CALL(time, currentTimeInMs()).WillOnce(Return(0)).WillOnce(Return(100));
-  EXPECT_CALL(mockModel, moveFor(100));
+  EXPECT_CALL(mockModel, moveFor(_));
 
   CharacterController controller(&time, &mockModel, &mockView);
   controller.move();
