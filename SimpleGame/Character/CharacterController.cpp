@@ -22,9 +22,10 @@ CharacterController::~CharacterController() {
 void CharacterController::move() {
   Uint32 curTime = time_->currentTimeInMs();
   Uint32 passedTime = curTime - lastStateChange;
-  cout<<"cur "<<curTime<<" last "<<lastStateChange<<endl;
-  //TODO FIX ME This is a hack!
-  model_->moveFor(passedTime/10);
+
+  Uint32 scaledTime = passedTime/10;
+
+  model_->moveFor(scaledTime);
   lastStateChange = curTime;
 }
 
