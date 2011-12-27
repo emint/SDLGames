@@ -49,9 +49,9 @@ DEPENDENCY_FILE = Makefile.dependencies
 #Target names
 TARGETS = driver unit_tests
 
-all: $(TARGETS) dependencies
+all: dependencies $(TARGETS) 
 
-driver: $(MAIN_OBJS) $(OBJECTS) 
+driver: $(MAIN_OBJS) $(OBJECTS) $(HEADERS) 
 	$(CXX) $(CXXFLAGS) $(LIBS) -o $@ $(MAIN_OBJS) $(OBJECTS)
 
 unit_tests: $(TEST_OBJS) $(OBJECTS) $(HEADERS) $(SOURCES) $(TEST_HEADERS) $(TEST_SOURCES) 
