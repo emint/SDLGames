@@ -1,0 +1,11 @@
+/*
+ * KeyboardControllerTest.cpp
+ *
+ *  Created on: Dec 20, 2011
+ *      Author: emint
+ */
+
+#include "Interactions/KeyboardController.h"
+#include "Mock_MovementControl.h"
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>

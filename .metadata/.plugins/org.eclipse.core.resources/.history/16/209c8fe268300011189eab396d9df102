@@ -1,0 +1,27 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+O_SRCS += \
+../Interactions/KeyboardController.o 
+
+CPP_SRCS += \
+../Interactions/KeyboardController.cpp 
+
+OBJS += \
+./Interactions/KeyboardController.o 
+
+CPP_DEPS += \
+./Interactions/KeyboardController.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+Interactions/%.o: ../Interactions/%.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: GCC C++ Compiler'
+	g++ -I/home/emint/gtest-1.6.0/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o"$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

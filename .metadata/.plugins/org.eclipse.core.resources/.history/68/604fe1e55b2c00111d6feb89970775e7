@@ -1,0 +1,21 @@
+/*
+ * SurfaceUtils.cpp
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#include "SurfaceUtils.h"
+
+SurfaceUtils::SurfaceUtils() {
+  // TODO Auto-generated constructor stub
+
+}
+
+SurfaceUtils::~SurfaceUtils() {
+  // TODO Auto-generated destructor stub
+}
+
+void SurfaceUtils::surfaceBlit(SDL_Rect clearRect, SDL_Rect displayRect, SDL_Surface* src, SDL_Surface* target){
+  SDL_BlitSurface(src, clearRect, target, displayRect);
+}

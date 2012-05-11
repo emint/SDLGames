@@ -1,0 +1,17 @@
+/*
+ * Directory.h
+ *
+ *  Created on: Dec 27, 2011
+ *      Author: emint
+ */
+
+#ifndef DIRECTORY_H_
+#define DIRECTORY_H_
+
+class Directory {
+  public:
+    Directory();
+    virtual ~Directory();
+};
+
+#endif /* DIRECTORY_H_ */

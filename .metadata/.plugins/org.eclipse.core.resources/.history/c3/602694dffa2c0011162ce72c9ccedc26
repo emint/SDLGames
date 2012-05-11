@@ -1,0 +1,18 @@
+/*
+ * CharacterModel.h
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#ifndef CHARACTERMODEL_H_
+#define CHARACTERMODEL_H_
+
+#include "Controls/MovementControls.h"
+class CharacterModel {
+  public:
+    CharacterModel(MovementControls* controls);
+    virtual ~CharacterModel();
+};
+
+#endif /* CHARACTERMODEL_H_ */

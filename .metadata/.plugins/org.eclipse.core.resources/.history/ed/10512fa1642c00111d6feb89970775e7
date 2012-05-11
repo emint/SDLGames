@@ -1,0 +1,26 @@
+#include <gmock/gmock.h>
+#include <gtest/gtest.h>
+#include "SDL/SDL.h"
+
+using ::testing::MatcherInterface;
+using ::testing::MatchResultListener;
+
+class SDLRectMatcher: public MatcherInterface<SDL_Rect> {
+  public:
+    explicit SDLRectMatcher(SDL_Rect other_)
+    : other(other_) {}
+
+    virtual bool MatchAndExplain(const SDLRect& rect, MatchResultListener* listener) const {
+      return (rect.x == other.x) && (rect.y == other.y) && (rect.h == other.h) && (rect.y == other.y);
+    }
+
+    virtual void DescribeTo(::std::ostream* os) const {
+      *os << "two rects are equal.";
+    }
+
+    virtual void DescribeNegationTo(::std::ostream* os) const {
+      *os << "two rects are not equal.";
+    }
+  private:
+    SDL_Rect other;
+};

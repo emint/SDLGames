@@ -1,0 +1,17 @@
+/*
+ * SurfaceLoader.cpp
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#include "SurfaceLoader.h"
+
+SurfaceLoader::SurfaceLoader() {
+  // TODO Auto-generated constructor stub
+
+}
+
+SurfaceLoader::~SurfaceLoader() {
+  // TODO Auto-generated destructor stub
+}

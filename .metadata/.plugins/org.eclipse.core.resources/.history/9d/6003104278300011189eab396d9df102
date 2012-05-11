@@ -1,0 +1,25 @@
+/*
+ * Directory.h
+ *
+ *  Created on: Dec 27, 2011
+ *      Author: emint
+ */
+
+#ifndef DIRECTORY_H_
+#define DIRECTORY_H_
+
+#include <string>
+#include "boost/filesystem.hpp"
+
+using namespace boost::filesystem;
+using namespace std;
+
+class Directory {
+  public:
+    Directory(string dirName);
+    virtual ~Directory();
+  private:
+    path* p;
+};
+
+#endif /* DIRECTORY_H_ */

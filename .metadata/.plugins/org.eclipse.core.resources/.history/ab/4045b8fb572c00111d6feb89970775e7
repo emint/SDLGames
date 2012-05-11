@@ -1,0 +1,21 @@
+/*
+ * Window.h
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#ifndef WINDOW_H_
+#define WINDOW_H_
+
+#include "SurfaceLoader.h"
+
+class Window {
+  public:
+    Window(SurfaceLoader* surfaceLoader_);
+    virtual ~Window();
+  private:
+    SurfaceLoader* surfaceLoader;
+};
+
+#endif /* WINDOW_H_ */

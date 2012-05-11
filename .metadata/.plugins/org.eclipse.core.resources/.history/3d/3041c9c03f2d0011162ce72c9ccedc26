@@ -1,0 +1,39 @@
+/*
+ * CharacterView.cpp
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#include "CharacterView.h"
+#include <iostream>
+using namespace std;
+
+CharacterView::CharacterView(CharacterModel* model, Window* window) : model_(model), window_(window),
+  curSpriteLocX(0), curSpriteLocY(0) {
+}
+
+CharacterView::~CharacterView() {
+}
+
+void CharacterView::display() {
+  int newX = model_->posX();
+  int newY = model_->posY();
+
+
+  window_->clearRect(curSpriteLocX_, curSpriteLocY_, sprite_->width(), sprite_->height());
+
+  window_->showSprite(newX, newY, *sprite_);
+
+  curSpriteLocX_ = newX;
+  curSpriteLocY_ = newY;
+  cout<<model_->posX()<<","<<model_->posY()<<endl;
+}
+
+int CharacterView::curSpriteLocX() const {
+  return curSpriteLocX_;
+}
+
+int CharacterView::curSpriteLocY() const {
+  return curSpriteLocY_;
+}

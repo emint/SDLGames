@@ -1,0 +1,36 @@
+/*
+ * KeyboardControllerTest.cpp
+ *
+ *  Created on: Dec 20, 2011
+ *      Author: emint
+ */
+
+#include "Interactions/KeyboardController.h"
+#include "Mock_MovementControl.h"
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+#include "SDL/SDL.h"
+
+SDL_Event makeEvent(Uint8 type, const SDLKey key){
+  SDL_keysym keysm;
+  keysm.sym = key;
+
+  SDL_KeyboardEvent keyEvent;
+  keyEvent.keysym = keysm;
+
+  SDL_Event event;
+  event.key = keyEvent;
+  event.type = type;
+
+  return event;
+}
+TEST(KeyboardController, upKeyPressed){
+  MockMovementControls mockMovementControls;
+  KeyboardController controller(&mockMovementControls);
+
+  EXPECT_CALL(mockMovementControls, movementIs(MovementControls::UP));
+
+  SDL_Event event = makeEvent(SDL_KEYDOWN, SDLK_UP);
+
+  controller.keyEventIs(event);
+}

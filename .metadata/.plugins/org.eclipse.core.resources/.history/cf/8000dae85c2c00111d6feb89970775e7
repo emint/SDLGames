@@ -1,0 +1,27 @@
+/*
+ * Sprite.cpp
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#include "Sprite.h"
+#include <iostream>
+#include "Exceptions/ResourceNotFoundException.h"
+
+Sprite::Sprite(SurfaceLoader* surfaceLoader_) : surfaceLoader(surfaceLoader_), spriteFileName(""), width_(16), height_(16) {
+
+}
+
+Sprite::~Sprite() {
+  // TODO Auto-generated destructor stub
+}
+
+void Sprite::spriteIs(string fileName){
+  spriteFileName = fileName;
+  sprite = surfaceLoader->loadImage(spriteFileName);
+
+  if (sprite == NULL){
+    throw ResourceNotFoundException(fileName);
+  }
+}

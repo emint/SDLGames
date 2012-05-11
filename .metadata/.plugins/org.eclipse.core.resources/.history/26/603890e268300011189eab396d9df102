@@ -1,0 +1,31 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+O_SRCS += \
+../Exceptions/InvalidArgumentException.o \
+../Exceptions/ResourceNotFoundException.o 
+
+CPP_SRCS += \
+../Exceptions/InvalidArgumentException.cpp \
+../Exceptions/ResourceNotFoundException.cpp 
+
+OBJS += \
+./Exceptions/InvalidArgumentException.o \
+./Exceptions/ResourceNotFoundException.o 
+
+CPP_DEPS += \
+./Exceptions/InvalidArgumentException.d \
+./Exceptions/ResourceNotFoundException.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+Exceptions/%.o: ../Exceptions/%.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: GCC C++ Compiler'
+	g++ -I/home/emint/gtest-1.6.0/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o"$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

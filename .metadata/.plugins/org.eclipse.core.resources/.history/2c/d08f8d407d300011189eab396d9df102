@@ -1,0 +1,14 @@
+/*
+ * Mock_Directory.h
+ *
+ *  Created on: Dec 27, 2011
+ *      Author: emint
+ */
+#include <gmock/gmock.h>
+#include <gtest/gtest.h>
+
+#include "Filesystem/Directory.h"
+
+class MockDirectory : public Directory {
+  public:
+};

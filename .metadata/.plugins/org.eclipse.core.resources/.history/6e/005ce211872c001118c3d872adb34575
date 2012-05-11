@@ -1,0 +1,23 @@
+/*
+ * SurfaceUtils.h
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#ifndef SURFACEUTILS_H_
+#define SURFACEUTILS_H_
+#include "SDL/SDL.h"
+#include "Display/Sprite.h"
+
+class SurfaceUtils {
+  public:
+    SurfaceUtils();
+    virtual ~SurfaceUtils();
+
+    virtual void spriteBlit(SDL_Rect position, Sprite src, SDL_Surface* target);
+
+    virtual void clearRect(SDL_Rect toClear, SDL_Surface* target);
+};
+
+#endif /* SURFACEUTILS_H_ */

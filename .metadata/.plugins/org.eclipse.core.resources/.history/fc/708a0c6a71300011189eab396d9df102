@@ -1,0 +1,13 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Dec 27, 2011
+ *      Author: emint
+ */
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  cout<<"Hello world!"<<endl;
+}

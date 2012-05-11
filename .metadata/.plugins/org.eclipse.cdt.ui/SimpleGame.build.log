@@ -1,0 +1,5 @@
+
+**** Build of configuration Debug for project SimpleGame ****
+
+make all 
+g++ -Wall -g -Werror -I/home/emint/gtest-1.6.0/include -I/home/emint/gmock-1.6.0/include -I. -MM Controls/MovementControls.cpp Interactions/KeyboardController.cpp Display/Sprite.cpp Exceptions/ResourceNotFoundException.cpp Display/SurfaceLoader.cpp Display/Window.cpp Display/SurfaceUtils.cpp Exceptions/InvalidArgumentException.cpp Display/Rect.cpp Character/CharacterModel.cpp Character/CharacterView.cpp Character/CharacterController.cpp Utils/TimeProvider.cpp unit-test/MovementControlTests.cpp  unit-test/KeyboardControllerTest.cpp unit-test/SpriteTest.cpp unit-test/WindowTest.cpp unit-test/CharacterControllerTest.cpp unit-test/CharacterModelTest.cpp unit-test/CharacterViewTest.cpp > Makefile.dependencies

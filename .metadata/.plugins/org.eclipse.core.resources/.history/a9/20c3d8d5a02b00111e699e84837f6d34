@@ -1,0 +1,17 @@
+/*
+ * KeyboardController.cpp
+ *
+ *  Created on: Dec 20, 2011
+ *      Author: emint
+ */
+
+#include "KeyboardController.h"
+
+KeyboardController::KeyboardController(MovementControls* movementControls) : movementControls(movementControls) {
+  // TODO Auto-generated constructor stub
+
+}
+
+KeyboardController::~KeyboardController() {
+  // TODO Auto-generated destructor stub
+}

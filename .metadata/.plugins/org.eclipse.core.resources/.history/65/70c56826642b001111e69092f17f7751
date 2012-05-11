@@ -1,0 +1,13 @@
+/*
+ * MovementControlTests.cpp
+ *
+ *  Created on: Dec 20, 2011
+ *      Author: emint
+ */
+
+#include <gtest/gtest.h>
+#include "/Controls/MovementControls.h"
+
+TEST(MovementControl, test){
+	ASSERT_TRUE(false);
+}

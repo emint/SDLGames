@@ -1,0 +1,17 @@
+/*
+ * TimeProvider.h
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#ifndef TIMEPROVIDER_H_
+#define TIMEPROVIDER_H_
+
+class TimeProvider {
+  public:
+    TimeProvider();
+    virtual ~TimeProvider();
+};
+
+#endif /* TIMEPROVIDER_H_ */

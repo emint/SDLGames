@@ -1,0 +1,35 @@
+/*
+ * MovementControls.cpp
+ *
+ *  Created on: Dec 20, 2011
+ *      Author: emint
+ */
+
+#include "MovementControls.h"
+
+MovementControls::~MovementControls(){
+
+}
+
+void MovementControls::movementIs(MovementType movementType){
+  switch (movementType){
+    case UP:
+      yVel += Y_VEL_INC;
+      break;
+    case DOWN:
+      yVel -= Y_VEL_INC;
+      break;
+    case RIGHT:
+      xVel += X_VEL_INC;
+      break;
+    case LEFT:
+      xVel += X_VEL_INC;
+      break;
+    case UP_DOWN_STOP:
+      yVel = 0;
+      break;
+    case LEFT_RIGHT_STOP:
+      xVel = 0;
+      break;
+  }
+}

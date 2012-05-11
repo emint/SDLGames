@@ -1,0 +1,27 @@
+/*
+ * CharacterControllerTest.cpp
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#include <gmock/gmock.h>
+#include <gtest/gtest.h>
+
+#include "Character/CharacterController.h"
+#include "Mock_CharacterModel.h"
+#include "Mock_CharacterView.h"
+#include "Mock_TimeProvider.h"
+#include "Mock_MovementControl.h"
+
+CharacterController initValidController() {
+  MockMovementControls mockMovement;
+  MockCharacterModel mockModel(&mockMovement);
+  MockCharacterView mockView;
+  MockTimeProvider time;
+  CharacterController controller(time, mockModel, mockView);
+  return controller;
+}
+TEST(CharacterController, initializedTime){
+
+}

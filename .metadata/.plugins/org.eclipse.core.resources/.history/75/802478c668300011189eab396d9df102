@@ -1,0 +1,43 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+O_SRCS += \
+../Display/Rect.o \
+../Display/Sprite.o \
+../Display/SurfaceLoader.o \
+../Display/SurfaceUtils.o \
+../Display/Window.o 
+
+CPP_SRCS += \
+../Display/Rect.cpp \
+../Display/Sprite.cpp \
+../Display/SurfaceLoader.cpp \
+../Display/SurfaceUtils.cpp \
+../Display/Window.cpp 
+
+OBJS += \
+./Display/Rect.o \
+./Display/Sprite.o \
+./Display/SurfaceLoader.o \
+./Display/SurfaceUtils.o \
+./Display/Window.o 
+
+CPP_DEPS += \
+./Display/Rect.d \
+./Display/Sprite.d \
+./Display/SurfaceLoader.d \
+./Display/SurfaceUtils.d \
+./Display/Window.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+Display/%.o: ../Display/%.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: GCC C++ Compiler'
+	g++ -I/home/emint/gtest-1.6.0/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o"$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

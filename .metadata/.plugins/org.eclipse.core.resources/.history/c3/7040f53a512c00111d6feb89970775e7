@@ -1,0 +1,19 @@
+/*
+ * ResourceNotFoundException.h
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#ifndef RESOURCENOTFOUNDEXCEPTION_H_
+#define RESOURCENOTFOUNDEXCEPTION_H_
+
+#include <exception>
+
+class ResourceNotFoundException: public std::exception {
+  public:
+    ResourceNotFoundException();
+    virtual ~ResourceNotFoundException();
+};
+
+#endif /* RESOURCENOTFOUNDEXCEPTION_H_ */

@@ -1,0 +1,19 @@
+/*
+ * DirectoryImpl.h
+ *
+ *  Created on: Dec 27, 2011
+ *      Author: emint
+ */
+
+#ifndef DIRECTORYIMPL_H_
+#define DIRECTORYIMPL_H_
+#include "Directory.h"
+
+class DirectoryImpl : public Directory {
+  public:
+    DirectoryImpl(string dir);
+  private:
+    path* dirPath;
+};
+
+#endif /* DIRECTORYIMPL_H_ */

@@ -1,0 +1,23 @@
+/*
+ * KeyboardController.h
+ *
+ *  Created on: Dec 20, 2011
+ *      Author: emint
+ */
+
+#ifndef KEYBOARDCONTROLLER_H_
+#define KEYBOARDCONTROLLER_H_
+#include "SDL/SDL.h"
+#include "Controls/MovementControls.h"
+class KeyboardController {
+  public:
+    KeyboardController(MovementControls* movementControls) : movementControls(movementControls) {
+    }
+    virtual ~KeyboardController();
+
+    virtual void keyEvent(SDL_Event event);
+  private:
+    MovementControls* movementControls;
+};
+
+#endif /* KEYBOARDCONTROLLER_H_ */

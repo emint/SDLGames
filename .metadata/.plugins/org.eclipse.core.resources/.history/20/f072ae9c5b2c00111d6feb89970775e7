@@ -1,0 +1,17 @@
+/*
+ * SurfaceUtils.h
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#ifndef SURFACEUTILS_H_
+#define SURFACEUTILS_H_
+
+class SurfaceUtils {
+  public:
+    SurfaceUtils();
+    virtual ~SurfaceUtils();
+};
+
+#endif /* SURFACEUTILS_H_ */

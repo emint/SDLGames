@@ -1,0 +1,19 @@
+/*
+ * AssetManager.h
+ *
+ *  Created on: Dec 27, 2011
+ *      Author: emint
+ */
+
+#ifndef ASSETMANAGER_H_
+#define ASSETMANAGER_H_
+
+#include "boost/filesystem.hpp"
+
+class AssetManager {
+  public:
+    AssetManager();
+    virtual ~AssetManager();
+};
+
+#endif /* ASSETMANAGER_H_ */

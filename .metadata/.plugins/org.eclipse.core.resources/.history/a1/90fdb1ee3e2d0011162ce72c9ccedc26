@@ -1,0 +1,31 @@
+/*
+ * CharacterView.h
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#ifndef CHARACTERVIEW_H_
+#define CHARACTERVIEW_H_
+
+#include "Display/Window.h"
+#include "CharacterModel.h"
+#include "Display/Sprite.h"
+class CharacterView {
+  public:
+    CharacterView(CharacterModel* model, Window* window);
+    virtual ~CharacterView();
+
+    virtual inline void spriteIs(Sprite* sprite) { sprite_ = sprite; }
+
+    virtual void display();
+  private:
+    CharacterModel* model_;
+    Window* window_;
+    Sprite* sprite_;
+
+    int curSpriteLocX;
+    int curSpriteLocY;
+};
+
+#endif /* CHARACTERVIEW_H_ */

@@ -1,0 +1,17 @@
+/*
+ * SurfaceLoader.h
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#ifndef SURFACELOADER_H_
+#define SURFACELOADER_H_
+
+class SurfaceLoader {
+  public:
+    SurfaceLoader();
+    virtual ~SurfaceLoader();
+};
+
+#endif /* SURFACELOADER_H_ */

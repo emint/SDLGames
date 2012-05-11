@@ -1,0 +1,16 @@
+/*
+ * Mock_CharacterModel.cpp
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#include <gmock/gmock.h>
+#include <gtest/gtest.h>
+
+#include "Character/CharacterModel.h"
+
+class MockCharacterModel : public CharacterModel {
+  public:
+    MOCK_METHOD1(moveFor, void(Uint32 time));
+};

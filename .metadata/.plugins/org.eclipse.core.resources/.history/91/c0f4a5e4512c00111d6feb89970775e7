@@ -1,0 +1,32 @@
+/*
+ * Sprite.cpp
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#include "Sprite.h"
+#include <iostream>
+#include "Exceptions/ResourceNotFoundException.h"
+Sprite::Sprite() {
+  // TODO Auto-generated constructor stub
+
+}
+
+Sprite::~Sprite() {
+  // TODO Auto-generated destructor stub
+}
+
+void Sprite::spriteIs(string fileName){
+  spriteFileName = fileName;
+  SDL_Surface* character_surf = NULL;
+  character_surf = IMG_Load(spriteFileName.c_str());
+
+  if (character_surf == NULL){
+    throw ResourceNotFoundException(fileName);
+  }
+
+  sprite = SDL_DisplayFormat(character_surf);
+  SDL_FreeSurface(character_surf);
+  return true;
+}

@@ -1,0 +1,29 @@
+/*
+ * CharacterModel.h
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#ifndef CHARACTERMODEL_H_
+#define CHARACTERMODEL_H_
+
+#include "../Controls/MovementControls.h"
+#include "SDL/SDL.h"
+class CharacterModel {
+  public:
+    CharacterModel(MovementControls* controls);
+    virtual ~CharacterModel();
+
+    virtual void moveFor(Uint32 timeToMove);
+
+    virtual int posX() const;
+    virtual int posY() const;
+  private:
+    MovementControls* controls_;
+
+    int posX_;
+    int posY_;
+};
+
+#endif /* CHARACTERMODEL_H_ */

@@ -1,0 +1,43 @@
+/*
+ * MovementControls.h
+ *
+ *  Created on: Dec 20, 2011
+ *      Author: emint
+ */
+
+#ifndef MOVEMENTCONTROLS_H_
+#define MOVEMENTCONTROLS_H_
+
+class MovementControls {
+  public:
+    MovementControls() : xVel(0), yVel(0) {
+    }
+    virtual ~MovementControls();
+
+    enum MovementType {
+      UP,
+      UP_STOP,
+      DOWN,
+      DOWN_STOP,
+      LEFT,
+      LEFT_STOP,
+      RIGHT,
+      RIGHT_STOP
+    };
+
+    virtual inline float xVelocity() const { return xVel; }
+    virtual inline float yVelocity() const { return yVel; }
+
+    virtual inline void up() { xVel = xVel_; }
+    virtual inline void down() { yVel = yVel_; }
+    virtual inline void left() {}
+    virtual inline void right() {}
+  private:
+    float xVel;
+    float yVel;
+
+    const float X_VEL_INC = 2.0f;
+    const float Y_VEL_INC = 2.0f;
+};
+
+#endif /* MOVEMENTCONTROLS_H_ */

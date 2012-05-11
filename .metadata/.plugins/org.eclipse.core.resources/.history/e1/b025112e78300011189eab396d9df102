@@ -1,0 +1,17 @@
+/*
+ * Directory.cpp
+ *
+ *  Created on: Dec 27, 2011
+ *      Author: emint
+ */
+
+#include "Directory.h"
+
+Directory::Directory() {
+  // TODO Auto-generated constructor stub
+
+}
+
+Directory::~Directory() {
+  // TODO Auto-generated destructor stub
+}

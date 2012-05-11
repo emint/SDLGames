@@ -1,0 +1,17 @@
+/*
+ * Window.cpp
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#include "Window.h"
+
+Window::Window(SurfaceLoader* surfaceLoader_) : surfaceLoader(surfaceLoader_), height_(512), width_(512) {
+  // TODO Auto-generated constructor stub
+
+}
+
+Window::~Window() {
+  // TODO Auto-generated destructor stub
+}

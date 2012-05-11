@@ -1,0 +1,37 @@
+/*
+ * KeyboardController.cpp
+ *
+ *  Created on: Dec 20, 2011
+ *      Author: emint
+ */
+
+#include "KeyboardController.h"
+
+KeyboardController::~KeyboardController() {
+}
+
+void KeyboardController::keyEventIs(SDL_Event event) {
+  if (event.type == SDL_KEYDOWN) {
+    if (event.key.keysym.sym == SDLK_UP)
+      move_state[MOV_UP] = true;
+    else if (event.key.keysym.sym == SDLK_DOWN)
+      move_state[MOV_DOWN] = true;
+
+    if (event.key.keysym.sym == SDLK_RIGHT)
+      move_state[MOV_RIGHT] = true;
+    else if (event.key.keysym.sym == SDLK_LEFT)
+      move_state[MOV_LEFT] = true;
+  }
+  if (event.type == SDL_KEYUP) {
+    if (event.key.keysym.sym == SDLK_UP)
+      move_state[MOV_UP] = false;
+    else if (event.key.keysym.sym == SDLK_DOWN)
+      move_state[MOV_DOWN] = false;
+
+    if (event.key.keysym.sym == SDLK_RIGHT)
+      move_state[MOV_RIGHT] = false;
+    else if (event.key.keysym.sym == SDLK_LEFT)
+      move_state[MOV_LEFT] = false;
+  }
+}
+}

@@ -1,0 +1,10 @@
+/*
+ * Mock_MovementControl.cpp
+ *
+ *  Created on: Dec 20, 2011
+ *      Author: emint
+ */
+
+#include "Controls/MovementControls.h"
+#include <gmock/gmock.h>
+#include <gtest/gtest.h>

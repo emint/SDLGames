@@ -1,0 +1,30 @@
+/*
+ * Window.h
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#ifndef WINDOW_H_
+#define WINDOW_H_
+
+#include "SurfaceLoader.h"
+#include "SDL/SDL.h"
+
+class Window {
+  public:
+    Window(SurfaceLoader* surfaceLoader_);
+    virtual ~Window();
+
+    inline virtual size_t height() const {return windowSurface->h; }
+    inline virtual size_t width() const {return windowSurface->w; }
+
+  private:
+    SurfaceLoader* surfaceLoader;
+    size_t height_;
+    size_t width_;
+
+    SDL_Surface* windowSurface;
+};
+
+#endif /* WINDOW_H_ */

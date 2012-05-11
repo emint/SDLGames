@@ -1,0 +1,25 @@
+/*
+ * MovementControls.h
+ *
+ *  Created on: Dec 20, 2011
+ *      Author: emint
+ */
+
+#ifndef MOVEMENTCONTROLS_H_
+#define MOVEMENTCONTROLS_H_
+
+class MovementControls {
+  public:
+    MovementControls() : xVel(0), yVel(0) {
+    }
+    virtual ~MovementControls();
+
+    inline float xVelocity() { return xVel; }
+    inline float yVelocity() { return yVel; }
+
+  private:
+    float xVel;
+    float yVel;
+};
+
+#endif /* MOVEMENTCONTROLS_H_ */

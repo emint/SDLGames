@@ -1,0 +1,19 @@
+/*
+ * InvalidArgumentException.h
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#ifndef INVALIDARGUMENTEXCEPTION_H_
+#define INVALIDARGUMENTEXCEPTION_H_
+
+#include <exception>
+
+class InvalidArgumentException: public std::exception {
+  public:
+    InvalidArgumentException();
+    virtual ~InvalidArgumentException() throw();
+};
+
+#endif /* INVALIDARGUMENTEXCEPTION_H_ */

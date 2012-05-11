@@ -1,0 +1,30 @@
+/*
+ * CharacterViewTest.cpp
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+#include <gmock/gmock.h>
+#include <gtest/gtest.h>
+
+#include "Character/CharacterView.h"
+
+#include "Mock_MovementControl.h"
+#include "Mock_CharacterModel.h"
+#include "Mock_SurfaceLoader.h"
+#include "Mock_SurfaceUtils.h"
+#include "Mock_Window.h"
+
+using ::testing::Return;
+
+TEST(CharacterView, displaysProperly){
+  MockMovementControls mockControls;
+  MockCharacterModel model(&mockControls);
+  MockSurfaceLoader loader;
+  EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(new SDL_Surface()));
+  MockWindow window(&loader, new MockSurfaceUtils());
+  EXPECT_CALL(model, posX()).WillOnce(Return(100));
+  EXPECT_CALL(model, posY()).WillOnce(Return(100));
+
+  CharacterView view(&model, &window);
+}

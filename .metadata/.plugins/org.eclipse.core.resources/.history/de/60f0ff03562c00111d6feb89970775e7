@@ -1,0 +1,36 @@
+/*
+ * Sprite.h
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#ifndef SPRITE_H_
+#define SPRITE_H_
+
+#include <string>
+#include "SDL/SDL.h"
+#include "SDL/SDL_image.h"
+#include "SurfaceLoader.h"
+
+using namespace std;
+
+class Sprite {
+  public:
+    Sprite(SurfaceLoader surfaceLoader_);
+    virtual ~Sprite();
+
+    inline virtual int height() const {return height_;}
+    inline virtual int width() const {return width_;}
+
+    virtual void spriteIs(string fileName);
+  private:
+    SurfaceLoader surfaceLoader;
+    string spriteFileName;
+
+    int width_;
+    int height_;
+    SDL_Surface* sprite;
+};
+
+#endif /* SPRITE_H_ */

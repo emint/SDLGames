@@ -1,0 +1,9 @@
+
+**** Build of configuration Debug for project WorldEditor ****
+
+make all 
+g++ -Wall -g -Werror -I/home/emint/gtest-1.6.0/include -I/home/emint/gmock-1.6.0/include -Imain/src -MM  main/src/Exceptions/InvalidArgumentException.cpp main/src/Exceptions/ResourceNotFoundException.cpp main/src/Assets/AssetManager.cpp main/src/Filesystem/DirectoryImpl.cpp main/src/Display/SurfaceLoader.cpp main/test/AssetManagerTest.cpp > Makefile.dependencies
+g++ -Wall -g -Werror -I/home/emint/gtest-1.6.0/include -I/home/emint/gmock-1.6.0/include -Imain/src   -c -o main/src/Assets/AssetManager.o main/src/Assets/AssetManager.cpp
+ar rcs libworld.a main/src/Exceptions/InvalidArgumentException.o main/src/Exceptions/ResourceNotFoundException.o main/src/Assets/AssetManager.o main/src/Filesystem/DirectoryImpl.o main/src/Display/SurfaceLoader.o
+g++ -Wall -g -Werror -I/home/emint/gtest-1.6.0/include -I/home/emint/gmock-1.6.0/include -Imain/src -lSDL -lSDL_image -lboost_filesystem -o editor main/src/main.o -L. -lworld 
+g++ -Wall -g -Werror -I/home/emint/gtest-1.6.0/include -I/home/emint/gmock-1.6.0/include -Imain/src  -lSDL -lSDL_image -lboost_filesystem /home/emint/gmock-1.6.0/make/gmock_main.a -o unit_tests  main/test/AssetManagerTest.o main/src/Exceptions/InvalidArgumentException.o main/src/Exceptions/ResourceNotFoundException.o main/src/Assets/AssetManager.o main/src/Filesystem/DirectoryImpl.o main/src/Display/SurfaceLoader.o

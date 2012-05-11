@@ -1,0 +1,28 @@
+/*
+ * Sprite.h
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#ifndef SPRITE_H_
+#define SPRITE_H_
+
+#include <string>
+using namespace std;
+
+class Sprite {
+  public:
+    Sprite();
+    virtual ~Sprite();
+
+    inline virtual int height() const {return height;}
+    inline virtual int width() const {return height;}
+
+  private:
+    string spriteFileName;
+    int width_;
+    int height_;
+};
+
+#endif /* SPRITE_H_ */

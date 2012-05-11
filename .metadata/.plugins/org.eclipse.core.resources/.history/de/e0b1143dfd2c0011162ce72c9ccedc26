@@ -1,0 +1,17 @@
+/*
+ * CharacterController.cpp
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#include "CharacterController.h"
+
+CharacterController::CharacterController(TimeProvider* time) : time_(time) {
+  // TODO Auto-generated constructor stub
+
+}
+
+CharacterController::~CharacterController() {
+  // TODO Auto-generated destructor stub
+}

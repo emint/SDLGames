@@ -1,0 +1,38 @@
+/*
+ * Rect.h
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#ifndef RECT_H_
+#define RECT_H_
+#include <string>
+#include "SDL/SDL.h"
+class Rect {
+  public:
+    Rect();
+    Rect(int x, int y, size_t width, size_t height);
+    SDL_Rect sdl();
+    virtual ~Rect();
+
+    inline int x() const { return x_; }
+    inline int y() const { return y_; }
+    inline void xIs(int x) { x_ = x; }
+    inline void yIs(int y) { y_ = y; }
+
+    inline size_t height() const {return height_; }
+    inline size_t width() const {return width_; }
+    inline void heightIs(size_t height) { height_ = height; }
+    inline void widthIs(size_t width) { width_ = width; }
+
+    bool operator==(const Rect& other) const;
+    bool operator!= (const Rect& other) const
+  private:
+    int x_;
+    int y_;
+    size_t height_;
+    size_t width_;
+};
+
+#endif /* RECT_H_ */

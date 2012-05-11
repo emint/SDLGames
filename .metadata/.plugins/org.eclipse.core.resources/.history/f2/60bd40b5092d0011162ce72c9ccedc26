@@ -1,0 +1,16 @@
+/*
+ * Mock_CharacterView.h
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#include <gmock/gmock.h>
+#include <gtest/gtest.h>
+
+#include "Character/CharacterView.h"
+
+class MockCharacterView : public CharacterView {
+  public:
+
+};

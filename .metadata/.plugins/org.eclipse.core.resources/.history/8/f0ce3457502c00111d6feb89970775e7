@@ -1,0 +1,33 @@
+/*
+ * Sprite.cpp
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#include "Sprite.h"
+#include <iostream>
+
+Sprite::Sprite() {
+  // TODO Auto-generated constructor stub
+
+}
+
+Sprite::~Sprite() {
+  // TODO Auto-generated destructor stub
+}
+
+bool Sprite::spriteIs(string fileName){
+  spriteFileName = fileName;
+  SDL_Surface* character_surf = NULL;
+  character_surf = IMG_Load(character.c_str());
+
+  if (character_surf == NULL){
+    cout<<"Error loading <"<<character<<">.\n";
+    return false;
+  }
+
+  SDL_Surface* char_animate = SDL_DisplayFormat(character_surf);
+  SDL_FreeSurface(character_surf);
+  return true;
+}

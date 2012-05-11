@@ -1,0 +1,22 @@
+/*
+ * SurfaceLoader.h
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#ifndef SURFACELOADER_H_
+#define SURFACELOADER_H_
+
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
+
+class SurfaceLoader {
+  public:
+    SurfaceLoader();
+    virtual ~SurfaceLoader();
+
+    SDL_Surface*
+};
+
+#endif /* SURFACELOADER_H_ */

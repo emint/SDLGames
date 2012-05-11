@@ -1,0 +1,21 @@
+/*
+ * CharacterModel.cpp
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#include "CharacterModel.h"
+
+CharacterModel::CharacterModel(MovementControls* movementControls) :
+  controls_(movementControls), posX_(0), posY_(0){
+}
+
+CharacterModel::~CharacterModel() {
+  // TODO Auto-generated destructor stub
+}
+
+void CharacterModel::moveFor(uin32_t time) {
+  posX_ += time*controls_->xVelocity();
+  posY_ += time*controls_->yVelocity();
+}

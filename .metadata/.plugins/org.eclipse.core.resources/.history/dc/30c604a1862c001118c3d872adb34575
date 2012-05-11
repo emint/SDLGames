@@ -1,0 +1,17 @@
+/*
+ * Rect.cpp
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#include "Rect.h"
+
+Rect::Rect() {
+  // TODO Auto-generated constructor stub
+
+}
+
+Rect::~Rect() {
+  // TODO Auto-generated destructor stub
+}

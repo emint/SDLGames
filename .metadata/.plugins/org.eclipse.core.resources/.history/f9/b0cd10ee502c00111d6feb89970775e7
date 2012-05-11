@@ -1,0 +1,17 @@
+/*
+ * ResourceNotFoundException.cpp
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#include "ResourceNotFoundException.h"
+
+ResourceNotFoundException::ResourceNotFoundException() {
+  // TODO Auto-generated constructor stub
+
+}
+
+ResourceNotFoundException::~ResourceNotFoundException() {
+  // TODO Auto-generated destructor stub
+}

@@ -1,0 +1,17 @@
+/*
+ * Sprite.cpp
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#include "Sprite.h"
+
+Sprite::Sprite() {
+  // TODO Auto-generated constructor stub
+
+}
+
+Sprite::~Sprite() {
+  // TODO Auto-generated destructor stub
+}

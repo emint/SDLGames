@@ -1,0 +1,17 @@
+/*
+ * InvalidArgumentException.cpp
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#include "InvalidArgumentException.h"
+
+InvalidArgumentException::InvalidArgumentException() {
+  // TODO Auto-generated constructor stub
+
+}
+
+InvalidArgumentException::~InvalidArgumentException() {
+  // TODO Auto-generated destructor stub
+}

@@ -1,0 +1,27 @@
+/*
+ * Rect.h
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#ifndef RECT_H_
+#define RECT_H_
+#include <string>
+#include "SDL/SDL.h"
+class Rect {
+  public:
+    Rect();
+    Rect(int x, int y, size_t width, size_t height);
+    SDL_Rect sdl();
+    virtual ~Rect();
+
+
+  private:
+    int x_;
+    int y_;
+    size_t height_;
+    size_t width_;
+};
+
+#endif /* RECT_H_ */

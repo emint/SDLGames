@@ -1,0 +1,21 @@
+/*
+ * AssetManager.cpp
+ *
+ *  Created on: Dec 27, 2011
+ *      Author: emint
+ */
+
+#include "AssetManager.h"
+
+AssetManager::AssetManager() {
+  // TODO Auto-generated constructor stub
+
+}
+
+AssetManager::~AssetManager() {
+  // TODO Auto-generated destructor stub
+}
+
+void AssetManager::loadAssets(string assetFolder){
+
+}

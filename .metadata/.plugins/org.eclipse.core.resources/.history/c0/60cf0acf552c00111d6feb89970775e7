@@ -1,0 +1,19 @@
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+#include "SDL/SDL.h"
+#include "Mock_SurfaceLoader.h"
+#include "Display/Sprite.h"
+#include <string>
+
+using namespace std;
+using ::testing::Return;
+
+TEST(Sprite, loadValidSprite) {
+  SDL_Surface* validSurface = new SDL_Surface();
+  MockSurfaceLoader loader;
+  string imgName = "name";
+
+  EXPECT_CALL(loader, loadImage(imgName)).WillOnce(Return(validSurface));
+  Sprite sprite(loader);
+  sprite.spriteIs(imgName);
+}

@@ -1,0 +1,25 @@
+/*
+ * Rect.h
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#ifndef RECT_H_
+#define RECT_H_
+
+class Rect {
+  public:
+    Rect();
+    Rect(int x, int y, size_t width, size_t height);
+    virtual ~Rect();
+
+
+  private:
+    int x;
+    int y;
+    size_t height;
+    size_t width;
+};
+
+#endif /* RECT_H_ */

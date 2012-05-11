@@ -1,0 +1,17 @@
+/*
+ * CharacterModel.h
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#ifndef CHARACTERMODEL_H_
+#define CHARACTERMODEL_H_
+
+class CharacterModel {
+  public:
+    CharacterModel();
+    virtual ~CharacterModel();
+};
+
+#endif /* CHARACTERMODEL_H_ */

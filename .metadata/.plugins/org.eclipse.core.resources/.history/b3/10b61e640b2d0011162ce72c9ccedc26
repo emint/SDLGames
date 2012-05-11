@@ -1,0 +1,15 @@
+/*
+ * CharacterView.cpp
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#include "CharacterView.h"
+
+CharacterView::CharacterView(CharacterModel* model, Window* window) : model(model), window(window) {
+}
+
+CharacterView::~CharacterView() {
+}
+

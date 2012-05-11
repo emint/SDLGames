@@ -1,0 +1,17 @@
+/*
+ * Sprite.h
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#ifndef SPRITE_H_
+#define SPRITE_H_
+
+class Sprite {
+  public:
+    Sprite();
+    virtual ~Sprite();
+};
+
+#endif /* SPRITE_H_ */

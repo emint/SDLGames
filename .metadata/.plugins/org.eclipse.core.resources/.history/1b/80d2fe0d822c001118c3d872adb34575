@@ -1,0 +1,60 @@
+/*
+ * WindowTest.cpp
+ *
+ *  Created on: Dec 21, 2011
+ *      Author: emint
+ */
+
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+#include <string>
+#include "SDL/SDL.h"
+
+#include "Display/Window.h"
+#include "Display/Sprite.h"
+
+#include "Exceptions/ResourceNotFoundException.h"
+
+#include "Mock_SurfaceLoader.h"
+#include "Mock_SurfaceUtils.h"
+
+using ::testing::Return;
+using ::testing::_;
+
+TEST(Window, validInitialization) {
+  SDL_Surface* validSurface = new SDL_Surface();
+  MockSurfaceLoader loader;
+  MockSurfaceUtils utils;
+
+  EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(validSurface));
+
+  EXPECT_NO_THROW(Window newWindow(&loader, &utils));
+}
+
+TEST(Window, invalidInitialization) {
+  SDL_Surface* invalidSurface = NULL;
+  MockSurfaceLoader loader;
+  MockSurfaceUtils utils;
+
+  EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(invalidSurface));
+
+  EXPECT_THROW(Window newWindow(&loader, &utils), ResourceNotFoundException);
+}
+
+TEST(Window, spriteBlit) {
+
+  SDL_Surface* validSurface = new SDL_Surface();
+  MockSurfaceLoader loader;
+  MockSurfaceUtils utils;
+
+  Sprite sprite(&loader);
+
+  EXPECT_CALL(loader, mainSurface(_, _, _, _)).WillOnce(Return(validSurface));
+  int x_pos = 4, y_pos = 5;
+
+
+  EXPECT_CALL(utils, spriteBlit( _, _, _));
+  Window newWindow(&loader, &utils);
+
+  newWindow.showSprite(x_pos, y_pos, sprite);
+}

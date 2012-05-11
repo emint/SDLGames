@@ -1,0 +1,17 @@
+/*
+ * CharacterModel.cpp
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#include "CharacterModel.h"
+
+CharacterModel::CharacterModel(MovementControls* movementControls) {
+  // TODO Auto-generated constructor stub
+
+}
+
+CharacterModel::~CharacterModel() {
+  // TODO Auto-generated destructor stub
+}

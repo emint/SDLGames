@@ -1,0 +1,21 @@
+/*
+ * CharacterController.h
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#ifndef CHARACTERCONTROLLER_H_
+#define CHARACTERCONTROLLER_H_
+#include "Utils/TimeProvider.h"
+
+class CharacterController {
+  public:
+    CharacterController(TimeProvider* time);
+    virtual ~CharacterController();
+
+  private:
+    TimeProvider* time_;
+};
+
+#endif /* CHARACTERCONTROLLER_H_ */

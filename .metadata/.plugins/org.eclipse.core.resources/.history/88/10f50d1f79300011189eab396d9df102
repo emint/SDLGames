@@ -1,0 +1,23 @@
+/*
+ * Directory.cpp
+ *
+ *  Created on: Dec 27, 2011
+ *      Author: emint
+ */
+
+#include "Directory.h"
+
+Directory::Directory(string dirName) {
+  dirPath = new path(dirName);
+
+  if (!exists(*dirPath)){
+    throw ResourceNotFoundException("Folder does not exist");
+  }
+  if (!is_directory(*dirPath)){
+    throw InvalidArgumentException("Argument is not a folder");
+  }
+}
+
+Directory::~Directory() {
+  // TODO Auto-generated destructor stub
+}

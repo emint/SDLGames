@@ -1,0 +1,17 @@
+/*
+ * CharacterController.h
+ *
+ *  Created on: Dec 22, 2011
+ *      Author: emint
+ */
+
+#ifndef CHARACTERCONTROLLER_H_
+#define CHARACTERCONTROLLER_H_
+
+class CharacterController {
+  public:
+    CharacterController();
+    virtual ~CharacterController();
+};
+
+#endif /* CHARACTERCONTROLLER_H_ */
